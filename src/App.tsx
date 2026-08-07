@@ -149,7 +149,7 @@ export default function App() {
       <header className="navbar">
         <div className="nav-container">
           <a href="#" className="logo">
-            <img src="/logo.png" alt="Pousada Restaurante Fênix" className="logo-img" />
+            <img src="logo.png" alt="Pousada Restaurante Fênix" className="logo-img" />
           </a>
           <nav className="nav-menu">
             <a href="#home" className={`nav-link ${activeSection === 'home' ? 'active' : ''}`}>Início</a>
@@ -195,7 +195,7 @@ export default function App() {
         <div className="container grid grid-2">
           <div className="sobre-img-wrapper">
             <div className="image-box">
-              <img src="/fotos-fenix/piscina/pousada-fenix-litoral-pr-piscina-ao-ar-livre-1.jpg" alt="Piscina da Pousada Fênix" className="main-img" />
+              <img src="fotos-fenix/piscina/pousada-fenix-litoral-pr-piscina-ao-ar-livre-1.jpg" alt="Piscina da Pousada Fênix" className="main-img" />
               <div className="experience-badge">
                 <span className="number" style={{ color: 'var(--accent-primary)', fontSize: '2.5rem', fontWeight: 900, display: 'block', lineHeight: 1 }}>25</span>
                 <span className="text">Suítes Climatizadas</span>
@@ -256,7 +256,7 @@ export default function App() {
             {/* Suite 1 */}
             <div className="suite-card">
               <div className="suite-img-container">
-                <img src="/fotos-fenix/quartos/pousada-fenix-praia-de-leste-suite-hidromassagem-jacuzzi.jpeg" alt="Suíte com Hidromassagem" />
+                <img src="fotos-fenix/quartos/pousada-fenix-praia-de-leste-suite-hidromassagem-jacuzzi.jpeg" alt="Suíte com Hidromassagem" />
                 <span className="suite-badge">Premium</span>
               </div>
               <div className="suite-info">
@@ -281,7 +281,7 @@ export default function App() {
             {/* Suite 2 */}
             <div className="suite-card">
               <div className="suite-img-container">
-                <img src="/fotos-fenix/quartos/pousada-fenix-litoral-pr-suite-hidromassagem-jacuzzi-4.jpg" alt="Suíte Família" />
+                <img src="fotos-fenix/quartos/pousada-fenix-litoral-pr-suite-hidromassagem-jacuzzi-4.jpg" alt="Suíte Família" />
                 <span className="suite-badge">Recomendado</span>
               </div>
               <div className="suite-info">
@@ -306,7 +306,7 @@ export default function App() {
             {/* Suite 3 */}
             <div className="suite-card">
               <div className="suite-img-container">
-                <img src="/fotos-fenix/quartos/pousada-fenix-litoral-pr-suite-hidromassagem-jacuzzi-5.jpg" alt="Suíte Familiar" />
+                <img src="fotos-fenix/quartos/pousada-fenix-litoral-pr-suite-hidromassagem-jacuzzi-5.jpg" alt="Suíte Familiar" />
               </div>
               <div className="suite-info">
                 <h3>Suíte Familiar</h3>
@@ -330,7 +330,7 @@ export default function App() {
             {/* Suite 4 */}
             <div className="suite-card">
               <div className="suite-img-container">
-                <img src="/fotos-fenix/quartos/pousada-fenix-pontal-do-parana-decoracao-cama-casal-cisnes.jpeg" alt="Suíte Grupo Grande" />
+                <img src="fotos-fenix/quartos/pousada-fenix-pontal-do-parana-decoracao-cama-casal-cisnes.jpeg" alt="Suíte Grupo Grande" />
               </div>
               <div className="suite-info">
                 <h3>Suíte Grupo (Quarto 2)</h3>
@@ -371,7 +371,7 @@ export default function App() {
           {/* Gallery Grid */}
           <div className="gallery-grid" id="galleryGrid">
             {visibleImages.map((imgName, i) => {
-              const imgPath = `/fotos-fenix/${currentCategory}/${imgName}`;
+              const imgPath = `fotos-fenix/${currentCategory}/${imgName}`;
               const caption = formatCaption(imgName);
               return (
                 <div className="gallery-item" key={imgName} onClick={() => openLightbox(i)}>
@@ -501,7 +501,7 @@ export default function App() {
       <footer>
         <div className="container footer-grid">
           <div className="footer-brand">
-            <img src="/logo.png" alt="Pousada Restaurante Fênix" className="footer-logo" />
+            <img src="logo.png" alt="Pousada Restaurante Fênix" className="footer-logo" />
             <p>Conforto, lazer e gastronomia a apenas 300 metros do mar em Praia de Leste.</p>
           </div>
           <div className="footer-links">
@@ -530,7 +530,7 @@ export default function App() {
           <img
             className="lightbox-content"
             id="lightboxImg"
-            src={`/fotos-fenix/${currentCategory}/${images[lightboxIdx]}`}
+            src={`fotos-fenix/${currentCategory}/${images[lightboxIdx]}`}
             alt={formatCaption(images[lightboxIdx])}
             onClick={(e) => e.stopPropagation()}
           />
