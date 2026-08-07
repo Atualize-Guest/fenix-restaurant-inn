@@ -197,7 +197,7 @@ export default function App() {
             <div className="image-box">
               <img src="/fotos-fenix/piscina/pousada-fenix-litoral-pr-piscina-ao-ar-livre-1.jpg" alt="Piscina da Pousada Fênix" className="main-img" />
               <div className="experience-badge">
-                <span class="number" style={{ color: 'var(--accent-primary)', fontSize: '2.5rem', fontWeight: 900, display: 'block', lineHeight: 1 }}>25</span>
+                <span className="number" style={{ color: 'var(--accent-primary)', fontSize: '2.5rem', fontWeight: 900, display: 'block', lineHeight: 1 }}>25</span>
                 <span className="text">Suítes Climatizadas</span>
               </div>
             </div>
@@ -262,7 +262,7 @@ export default function App() {
               <div className="suite-info">
                 <h3>Suíte com Hidromassagem</h3>
                 <p className="suite-desc">Perfeita para casais. Privacidade, banheira de hidromassagem privativa e enxoval especial para momentos relaxantes.</p>
-                <ul class="suite-amenities" style={{ listStyle: 'none', padding: 0 }}>
+                <ul className="suite-amenities" style={{ listStyle: 'none', padding: 0 }}>
                   <li><i className="fa-solid fa-user-friends"></i> 2 Adultos</li>
                   <li><i className="fa-solid fa-bath"></i> Hidromassagem</li>
                   <li><i className="fa-solid fa-snowflake"></i> Ar-condicionado</li>
@@ -287,7 +287,7 @@ export default function App() {
               <div className="suite-info">
                 <h3>Suíte Família</h3>
                 <p className="suite-desc">Ideal para famílias pequenas. Espaço aconchegante com cama de casal e solteiro com ótima ventilação.</p>
-                <ul class="suite-amenities" style={{ listStyle: 'none', padding: 0 }}>
+                <ul className="suite-amenities" style={{ listStyle: 'none', padding: 0 }}>
                   <li><i className="fa-solid fa-user-friends"></i> 2 Hóspedes + 1 Criança</li>
                   <li><i className="fa-solid fa-snowflake"></i> Ar-condicionado</li>
                   <li><i className="fa-solid fa-tv"></i> Smart TV</li>
@@ -311,7 +311,7 @@ export default function App() {
               <div className="suite-info">
                 <h3>Suíte Familiar</h3>
                 <p className="suite-desc">Ideal para grupos médios. Conforto compartilhado em um espaço amplo com camas planejadas.</p>
-                <ul class="suite-amenities" style={{ listStyle: 'none', padding: 0 }}>
+                <ul className="suite-amenities" style={{ listStyle: 'none', padding: 0 }}>
                   <li><i className="fa-solid fa-users"></i> Até 5 Hóspedes</li>
                   <li><i className="fa-solid fa-snowflake"></i> Ar-condicionado</li>
                   <li><i className="fa-solid fa-tv"></i> Smart TV</li>
@@ -335,7 +335,7 @@ export default function App() {
               <div className="suite-info">
                 <h3>Suíte Grupo (Quarto 2)</h3>
                 <p className="suite-desc">Ampla suíte familiar equipada com 2 camas de casal e 2 beliches, ideal para grandes grupos e excursões.</p>
-                <ul class="suite-amenities" style={{ listStyle: 'none', padding: 0 }}>
+                <ul className="suite-amenities" style={{ listStyle: 'none', padding: 0 }}>
                   <li><i className="fa-solid fa-users"></i> Até 7 Hóspedes</li>
                   <li><i className="fa-solid fa-snowflake"></i> Ar-condicionado</li>
                   <li><i className="fa-solid fa-tv"></i> Smart TV</li>
@@ -423,7 +423,7 @@ export default function App() {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" class="section faq">
+      <section id="faq" className="section faq">
         <div className="container">
           <div className="text-center">
             <span className="section-badge">FAQ</span>
