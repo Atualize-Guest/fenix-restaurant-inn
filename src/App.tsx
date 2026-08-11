@@ -197,7 +197,7 @@ export default function App() {
             <div className="image-box">
               <img src="fotos-fenix/piscina/pousada-fenix-litoral-pr-piscina-ao-ar-livre-1.jpg" alt="Piscina da Pousada Fênix" className="main-img" />
               <div className="experience-badge">
-                <span className="number" style={{ color: 'var(--accent-primary)', fontSize: '2.5rem', fontWeight: 900, display: 'block', lineHeight: 1 }}>25</span>
+                <span className="number" style={{ color: '#ffffff', fontSize: '2.5rem', fontWeight: 900, display: 'block', lineHeight: 1 }}>25</span>
                 <span className="text">Suítes Climatizadas</span>
               </div>
             </div>
