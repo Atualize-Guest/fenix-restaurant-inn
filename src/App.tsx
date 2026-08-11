@@ -487,7 +487,7 @@ export default function App() {
 
           <div className="contato-mapa">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3598.6720516524317!2d-48.37989912460565!3d-25.714856077382216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dbfa1a09d3bdfd%3A0xc3cf3388bd0e3e1!2sPousada%20e%20Restaurante%20F%C3%AAnix!5e0!3m2!1spt-BR!2sbr!4v1722200000000!5m2!1spt-BR!2sbr"
+              src="https://www.google.com/maps?q=Al.+Paranagu%C3%A1,+1310+-+Praia+de+Leste,+Pontal+do+Paran%C3%A1+-+PR&output=embed"
               style={{ border: 0, width: '100%', height: '100%', minHeight: '380px', borderRadius: '18px' }}
               allowFullScreen={true}
               loading="lazy"
