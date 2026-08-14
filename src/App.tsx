@@ -161,7 +161,7 @@ export default function App() {
             <a href="#contato" className={`nav-link ${activeSection === 'contato' ? 'active' : ''}`}>Contato</a>
           </nav>
           <div className="nav-cta">
-            <a href="https://wa.me/554189047277" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">
+            <a href="https://wa.me/5541989047277" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">
               <i className="fa-brands fa-whatsapp"></i> Reservar
             </a>
           </div>
@@ -274,7 +274,7 @@ export default function App() {
                   <span className="price">{withBreakfast ? rates.comCafe.hidro : rates.semCafe.hidro}</span>
                   <span className="price-suffix">/ diária</span>
                 </div>
-                <a href={`https://wa.me/554189047277?text=Olá,%20gostaria%20de%20reservar%20a%20Suíte%20com%20Hidromassagem%20(${withBreakfast ? 'Com' : 'Sem'}%20Café%20da%20Manhã)`} target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary btn-block">Consultar Disponibilidade</a>
+                <a href={`https://wa.me/5541989047277?text=Olá,%20gostaria%20de%20reservar%20a%20Suíte%20com%20Hidromassagem%20(${withBreakfast ? 'Com' : 'Sem'}%20Café%20da%20Manhã)`} target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary btn-block">Consultar Disponibilidade</a>
               </div>
             </div>
 
@@ -299,7 +299,7 @@ export default function App() {
                   <span className="price">{withBreakfast ? rates.comCafe.familia : rates.semCafe.familia}</span>
                   <span className="price-suffix">/ diária</span>
                 </div>
-                <a href={`https://wa.me/554189047277?text=Olá,%20gostaria%20de%20reservar%20a%20Suíte%20Família%20(${withBreakfast ? 'Com' : 'Sem'}%20Café%20da%20Manhã)`} target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary btn-block">Consultar Disponibilidade</a>
+                <a href={`https://wa.me/5541989047277?text=Olá,%20gostaria%20de%20reservar%20a%20Suíte%20Família%20(${withBreakfast ? 'Com' : 'Sem'}%20Café%20da%20Manhã)`} target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary btn-block">Consultar Disponibilidade</a>
               </div>
             </div>
 
@@ -323,7 +323,7 @@ export default function App() {
                   <span className="price">{withBreakfast ? rates.comCafe.familiar : rates.semCafe.familiar}</span>
                   <span className="price-suffix">/ diária</span>
                 </div>
-                <a href={`https://wa.me/554189047277?text=Olá,%20gostaria%20de%20reservar%20a%20Suíte%20Familiar%20(${withBreakfast ? 'Com' : 'Sem'}%20Café%20da%20Manhã)`} target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary btn-block">Consultar Disponibilidade</a>
+                <a href={`https://wa.me/5541989047277?text=Olá,%20gostaria%20de%20reservar%20a%20Suíte%20Familiar%20(${withBreakfast ? 'Com' : 'Sem'}%20Café%20da%20Manhã)`} target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary btn-block">Consultar Disponibilidade</a>
               </div>
             </div>
 
@@ -346,7 +346,7 @@ export default function App() {
                   <span className="price-prefix">Consulte tarifas</span>
                   <span className="price" style={{ fontSize: '1.8rem' }}>Sob Consulta</span>
                 </div>
-                <a href="https://wa.me/554189047277?text=Olá,%20gostaria%20de%20consultar%20preços%20para%20a%20Suíte%20Grupo%20(Quarto%202)" target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary btn-block">Solicitar Cotação</a>
+                <a href="https://wa.me/5541989047277?text=Olá,%20gostaria%20de%20consultar%20preços%20para%20a%20Suíte%20Grupo%20(Quarto%202)" target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary btn-block">Solicitar Cotação</a>
               </div>
             </div>
           </div>
@@ -460,7 +460,7 @@ export default function App() {
                 <i className="fa-solid fa-phone"></i>
                 <div>
                   <h4>WhatsApp / Telefone</h4>
-                  <p><a href="https://wa.me/554189047277">+55 41 8904-7277</a></p>
+                  <p><a href="https://wa.me/5541989047277">+55 41 98904-7277</a></p>
                 </div>
               </div>
               <div className="contact-item">
@@ -514,7 +514,7 @@ export default function App() {
           </div>
           <div className="footer-contact">
             <h4>Contato</h4>
-            <p><i className="fa-solid fa-phone"></i> +55 41 8904-7277</p>
+            <p><i className="fa-solid fa-phone"></i> +55 41 98904-7277</p>
             <p><i className="fa-solid fa-envelope"></i> fenixpousadaerestaurante@gmail.com</p>
           </div>
         </div>
