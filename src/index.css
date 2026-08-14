@@ -308,7 +308,7 @@ img {
     justify-content: center;
     padding-top: 80px;
     text-align: center;
-    background-image: url('./fotos-fenix/hero-bg.jpg');
+    background-image: url('../public/fotos-fenix/hero-bg.jpg');
     background-size: cover;
     background-position: center;
 }
