@@ -299,6 +299,15 @@ export default function App() {
             ></path>
           </svg>
         </div>
+        {/* Credito obrigatorio da foto (CC BY-SA 4.0) */}
+        <a
+          className="hero-credit"
+          href="https://commons.wikimedia.org/wiki/File:Pontal_do_Parana,_Praia_de_Leste.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Foto: Jair Prandi/viagensecaminhos.com (CC BY-SA 4.0)
+        </a>
       </section>
 
       {/* Sobre */}

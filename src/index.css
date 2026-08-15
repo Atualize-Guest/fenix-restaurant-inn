@@ -1878,3 +1878,37 @@ body {
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+/* Credito da foto do hero (obrigatorio pela licenca CC BY-SA 4.0) */
+.hero-credit {
+    position: absolute;
+    right: 12px;
+    bottom: 70px;
+    z-index: 6;
+    padding: 3px 9px;
+    border-radius: 20px;
+    background-color: rgba(34, 37, 42, 0.35);
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.1px;
+    line-height: 1.4;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+.hero-credit:hover {
+    color: #fff;
+    background-color: rgba(34, 37, 42, 0.55);
+}
+
+@media (max-width: 767px) {
+    .hero-credit {
+        right: 8px;
+        bottom: 68px;
+        font-size: 0.62rem;
+        padding: 2px 7px;
+        max-width: 190px;
+        text-align: right;
+    }
+}
