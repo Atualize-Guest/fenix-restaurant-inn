@@ -197,11 +197,11 @@ export default function App() {
         <div className="nav-container">
           <a href="#home" className="logo" aria-label="Pousada Restaurante Fênix — início">
             <img
-              src="logo.png"
+              src="logo.webp"
               alt="Pousada Restaurante Fênix"
               className="logo-img"
-              width={879}
-              height={356}
+              width={360}
+              height={146}
             />
           </a>
 
@@ -307,7 +307,7 @@ export default function App() {
           <div className="sobre-img-wrapper">
             <div className="image-box">
               <img
-                src="fotos-fenix/piscina/pousada-fenix-litoral-pr-piscina-ao-ar-livre-1.jpg"
+                src="fotos-fenix/piscina/pousada-fenix-litoral-pr-piscina-ao-ar-livre-1.webp"
                 alt="Piscina externa da Pousada Fênix em Praia de Leste"
                 className="main-img"
                 width={576}
@@ -702,11 +702,11 @@ export default function App() {
         <div className="container footer-grid">
           <div className="footer-brand">
             <img
-              src="logo.png"
+              src="logo.webp"
               alt="Pousada Restaurante Fênix"
               className="footer-logo"
-              width={879}
-              height={356}
+              width={360}
+              height={146}
               loading="lazy"
             />
             <p>Conforto, lazer e gastronomia a apenas 300 metros do mar em Praia de Leste.</p>
