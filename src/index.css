@@ -691,21 +691,10 @@ input:checked + .slider:before {
     border-color: var(--accent-primary);
 }
 
+/* A altura vem do carrossel (proporção 3:4, a mesma das fotos do acervo) */
 .suite-img-container {
     position: relative;
-    height: 220px;
     overflow: hidden;
-}
-
-.suite-img-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: var(--transition);
-}
-
-.suite-card:hover .suite-img-container img {
-    transform: scale(1.08);
 }
 
 .suite-badge {
@@ -836,19 +825,23 @@ input:checked + .slider:before {
     gap: 20px;
 }
 
-@media (min-width: 768px) {
+/* 4 colunas só a partir do desktop: em tablet a foto em retrato ficava
+   miniatura demais (163px de largura). */
+@media (min-width: 992px) {
     .gallery-grid {
         grid-template-columns: repeat(4, 1fr);
     }
 }
 
+/* 3:4 = proporção nativa de 54 das 57 fotos de quarto. Antes o box era quase
+   quadrado e cortava quase metade da altura de cada foto. */
 .gallery-item {
     position: relative;
     display: block;
     width: 100%;
-    height: 160px;
+    aspect-ratio: 3 / 4;
     padding: 0;
-    background: none;
+    background: var(--bg-tertiary);
     font: inherit;
     border-radius: 16px;
     overflow: hidden;
@@ -856,18 +849,6 @@ input:checked + .slider:before {
     box-shadow: var(--shadow-main);
     cursor: pointer;
     transition: var(--transition);
-}
-
-@media (min-width: 576px) {
-    .gallery-item {
-        height: 200px;
-    }
-}
-
-@media (min-width: 768px) {
-    .gallery-item {
-        height: 220px;
-    }
 }
 
 .gallery-item:focus-visible {
@@ -1705,5 +1686,195 @@ body {
     .nav-cta .btn-sm {
         padding: 10px 14px;
         font-size: 0.82rem;
+    }
+}
+
+/* =================================================================
+   CARROSSEL DAS SUITES
+   ================================================================= */
+.carousel {
+    position: relative;
+    outline: none;
+}
+
+.carousel:focus-visible .carousel-viewport {
+    outline: 3px solid var(--accent-primary);
+    outline-offset: -3px;
+}
+
+.carousel-viewport {
+    position: relative;
+    overflow: hidden;
+    /* Mesma proporcao das fotos originais: nada de corte no meio do quarto */
+    aspect-ratio: 3 / 4;
+    background-color: var(--bg-tertiary);
+}
+
+.carousel-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    height: 100%;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* Setas */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(34, 37, 42, 0.45);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: #fff;
+    font-size: 0.95rem;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.carousel-arrow.prev { left: 10px; }
+.carousel-arrow.next { right: 10px; }
+
+.suite-card:hover .carousel-arrow,
+.carousel:focus-within .carousel-arrow {
+    opacity: 1;
+}
+
+.carousel-arrow:hover {
+    background-color: var(--accent-primary);
+}
+
+/* No touch nao existe hover: as setas ficam sempre visiveis */
+@media (hover: none) {
+    .carousel-arrow {
+        opacity: 1;
+    }
+}
+
+/* Contador de fotos */
+.carousel-counter {
+    position: absolute;
+    left: 12px;
+    bottom: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 11px;
+    border-radius: 30px;
+    background-color: rgba(34, 37, 42, 0.55);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    pointer-events: none;
+}
+
+/* Bolinhas */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    padding: 12px 0 2px;
+}
+
+.carousel-dot {
+    width: 7px;
+    height: 7px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--bg-tertiary);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.carousel-dot:hover {
+    background-color: var(--accent-secondary);
+}
+
+.carousel-dot.active {
+    width: 20px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--accent-primary) 0%, var(--accent-gold) 100%);
+}
+
+/* Respeita quem pediu menos animacao no sistema */
+@media (prefers-reduced-motion: reduce) {
+    .carousel-track {
+        transition: none;
+    }
+}
+
+/* O badge da suite fica acima do carrossel */
+.suite-badge {
+    z-index: 3;
+}
+
+/* =================================================================
+   GALERIA E LIGHTBOX — MAIS AREA UTIL PARA A FOTO
+   ================================================================= */
+.tab-count {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 1px 8px;
+    border-radius: 30px;
+    background-color: rgba(34, 37, 42, 0.1);
+    font-size: 0.75rem;
+    font-weight: 800;
+}
+
+.tab-btn.active .tab-count {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.btn-hint {
+    margin-left: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    opacity: 0.75;
+}
+
+/* Fotos em retrato: aproveita a altura da tela em vez de 72vh fixos */
+.lightbox-content {
+    max-width: min(92vw, 720px);
+    max-height: 78vh;
+    width: auto;
+    object-fit: contain;
+}
+
+@media (min-width: 992px) {
+    .lightbox-content {
+        max-height: 82vh;
+    }
+}
+
+/* 3 colunas do celular grande ate o tablet */
+@media (min-width: 576px) and (max-width: 991px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }

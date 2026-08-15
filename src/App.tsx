@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { IMAGES } from './images';
+import { IMAGES, GALLERY_CATEGORIES, type GalleryCategory } from './images';
+import { SUITES } from './suites';
+import Carousel from './Carousel';
 import { WHATSAPP_NUMBER } from './config';
 import { captureTracking, trackWhatsappClick } from './tracking';
 
@@ -23,6 +25,9 @@ const NAV_LINKS = [
   { id: 'faq', label: 'FAQ' },
   { id: 'contato', label: 'Contato' },
 ];
+
+/** Quantas fotos da galeria aparecem antes de clicar em "Mostrar Mais". */
+const GALERIA_PASSO = 12;
 
 const REVIEWS = [
   {
@@ -88,6 +93,11 @@ const formatCaption = (imgName: string) =>
     .replace(/-/g, ' ')
     .replace(/\b\w/g, (c) => c.toUpperCase());
 
+interface LightboxFoto {
+  src: string;
+  alt: string;
+}
+
 /* ------------------------------------------------------------------ */
 
 export default function App() {
@@ -97,8 +107,8 @@ export default function App() {
   const tarifas = withBreakfast ? RATES.comCafe : RATES.semCafe;
 
   // 2. Galeria
-  const [currentCategory, setCurrentCategory] = useState<'quartos' | 'piscina' | 'comida-cafe-almoco'>('quartos');
-  const [itemsShown, setItemsShown] = useState(8);
+  const [currentCategory, setCurrentCategory] = useState<GalleryCategory>('quartos');
+  const [itemsShown, setItemsShown] = useState(GALERIA_PASSO);
 
   const images = IMAGES[currentCategory] || [];
   const visibleImages = images.slice(0, itemsShown);
@@ -117,34 +127,24 @@ export default function App() {
   const [activeFaqIdx, setActiveFaqIdx] = useState<number | null>(null);
   const toggleFaq = (idx: number) => setActiveFaqIdx((prev) => (prev === idx ? null : idx));
 
-  // 5. Lightbox
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [lightboxIdx, setLightboxIdx] = useState(0);
+  // 5. Lightbox — serve tanto a galeria quanto os carrosséis das suítes
+  const [lightbox, setLightbox] = useState<{ fotos: LightboxFoto[]; idx: number } | null>(null);
 
-  const openLightbox = (idx: number) => {
-    setLightboxIdx(idx);
-    setLightboxOpen(true);
-  };
-
-  const navigateLightbox = useCallback(
-    (direction: number, e?: React.MouseEvent) => {
-      e?.stopPropagation();
-      setLightboxIdx((prev) => {
-        const next = prev + direction;
-        if (next < 0) return images.length - 1;
-        if (next >= images.length) return 0;
-        return next;
-      });
-    },
-    [images.length],
-  );
+  const navigateLightbox = useCallback((direcao: number, e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    setLightbox((atual) => {
+      if (!atual) return atual;
+      const total = atual.fotos.length;
+      return { ...atual, idx: (atual.idx + direcao + total) % total };
+    });
+  }, []);
 
   useEffect(() => {
-    if (!lightboxOpen) return;
+    if (!lightbox) return;
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'ArrowLeft') navigateLightbox(-1);
       if (e.key === 'ArrowRight') navigateLightbox(1);
-      if (e.key === 'Escape') setLightboxOpen(false);
+      if (e.key === 'Escape') setLightbox(null);
     };
     window.addEventListener('keydown', handleKeyDown);
     // Trava o scroll do fundo enquanto a foto está aberta.
@@ -153,7 +153,16 @@ export default function App() {
       window.removeEventListener('keydown', handleKeyDown);
       document.body.style.overflow = '';
     };
-  }, [lightboxOpen, navigateLightbox]);
+  }, [lightbox, navigateLightbox]);
+
+  const abrirGaleriaNoLightbox = (idx: number) =>
+    setLightbox({
+      fotos: images.map((nome) => ({
+        src: `fotos-fenix/${currentCategory}/${nome}`,
+        alt: formatCaption(nome),
+      })),
+      idx,
+    });
 
   // 6. Menu mobile
   const [menuOpen, setMenuOpen] = useState(false);
@@ -179,7 +188,7 @@ export default function App() {
     captureTracking();
   }, []);
 
-  const lightboxImage = images[lightboxIdx];
+  const totalFotos = Object.values(IMAGES).reduce((soma, lista) => soma + lista.length, 0);
 
   return (
     <div className="app-root">
@@ -362,7 +371,8 @@ export default function App() {
           <span className="section-badge">Nossas Suítes</span>
           <h2 className="section-title">Acomodações sob medida para você</h2>
           <p className="section-subtitle">
-            Selecione opções com ou sem café da manhã para simular tarifas exclusivas.
+            Arraste as fotos para conhecer cada suíte por dentro e escolha a tarifa com ou sem café
+            da manhã.
           </p>
 
           <div className="toggle-container">
@@ -380,168 +390,64 @@ export default function App() {
           </div>
 
           <div className="suites-grid">
-            {/* Suíte 1 */}
-            <div className="suite-card">
-              <div className="suite-img-container">
-                <img
-                  src="fotos-fenix/quartos/pousada-fenix-praia-de-leste-suite-hidromassagem-jacuzzi.jpeg"
-                  alt="Suíte com banheira de hidromassagem da Pousada Fênix"
-                  width={1200}
-                  height={1600}
-                  loading="lazy"
-                  decoding="async"
-                />
-                <span className="suite-badge">Premium</span>
-              </div>
-              <div className="suite-info">
-                <h3>Suíte com Hidromassagem</h3>
-                <p className="suite-desc">
-                  Perfeita para casais. Privacidade, banheira de hidromassagem privativa e enxoval
-                  especial para momentos relaxantes.
-                </p>
-                <ul className="suite-amenities">
-                  <li><i className="fa-solid fa-user-friends" aria-hidden="true"></i> 2 Adultos</li>
-                  <li><i className="fa-solid fa-bath" aria-hidden="true"></i> Hidromassagem</li>
-                  <li><i className="fa-solid fa-snowflake" aria-hidden="true"></i> Ar-condicionado</li>
-                  <li><i className="fa-solid fa-tv" aria-hidden="true"></i> Smart TV</li>
-                  <li><i className="fa-solid fa-wind" aria-hidden="true"></i> Secador (Quarto 8)</li>
-                </ul>
-                <div className="suite-pricing">
-                  <span className="price-prefix">A partir de</span>
-                  <span className="price">{tarifas.hidro}</span>
-                  <span className="price-suffix">/ diária</span>
+            {SUITES.map((suite, indiceSuite) => (
+              <article className="suite-card" key={suite.id}>
+                <div className="suite-img-container">
+                  <Carousel
+                    fotos={suite.fotos}
+                    ariaLabel={`Fotos da ${suite.nome}`}
+                    prioridade={indiceSuite === 0}
+                    onExpand={(i) =>
+                      setLightbox({
+                        fotos: suite.fotos.map((f) => ({ src: f.arquivo, alt: f.alt })),
+                        idx: i,
+                      })
+                    }
+                  />
+                  {suite.badge && <span className="suite-badge">{suite.badge}</span>}
                 </div>
-                <a
-                  href={waLink(`Olá! Vim pelo site e quero reservar a Suíte com Hidromassagem (${cafeLabel}).`)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-outline-primary btn-block"
-                  onClick={() => trackWhatsappClick('suite-hidromassagem', { suite: 'Suíte com Hidromassagem', cafe_da_manha: withBreakfast })}
-                >
-                  Consultar Disponibilidade
-                </a>
-              </div>
-            </div>
 
-            {/* Suíte 2 */}
-            <div className="suite-card">
-              <div className="suite-img-container">
-                <img
-                  src="fotos-fenix/quartos/pousada-fenix-litoral-pr-suite-hidromassagem-jacuzzi-4.jpg"
-                  alt="Suíte Família com cama de casal e solteiro da Pousada Fênix"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <span className="suite-badge">Recomendado</span>
-              </div>
-              <div className="suite-info">
-                <h3>Suíte Família</h3>
-                <p className="suite-desc">
-                  Ideal para famílias pequenas. Espaço aconchegante com cama de casal e solteiro com
-                  ótima ventilação.
-                </p>
-                <ul className="suite-amenities">
-                  <li><i className="fa-solid fa-user-friends" aria-hidden="true"></i> 2 Hóspedes + 1 Criança</li>
-                  <li><i className="fa-solid fa-snowflake" aria-hidden="true"></i> Ar-condicionado</li>
-                  <li><i className="fa-solid fa-tv" aria-hidden="true"></i> Smart TV</li>
-                  <li><i className="fa-solid fa-wifi" aria-hidden="true"></i> Wi-Fi Grátis</li>
-                  <li><i className="fa-solid fa-baby" aria-hidden="true"></i> Crianças até 5a grátis</li>
-                </ul>
-                <div className="suite-pricing">
-                  <span className="price-prefix">A partir de</span>
-                  <span className="price">{tarifas.familia}</span>
-                  <span className="price-suffix">/ diária</span>
+                <div className="suite-info">
+                  <h3>{suite.nome}</h3>
+                  <p className="suite-desc">{suite.descricao}</p>
+                  <ul className="suite-amenities">
+                    {suite.comodidades.map((c) => (
+                      <li key={c.texto}>
+                        <i className={`fa-solid ${c.icone}`} aria-hidden="true"></i> {c.texto}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="suite-pricing">
+                    {suite.tarifa ? (
+                      <>
+                        <span className="price-prefix">A partir de</span>
+                        <span className="price">{tarifas[suite.tarifa]}</span>
+                        <span className="price-suffix">/ diária</span>
+                      </>
+                    ) : (
+                      <>
+                        <span className="price-prefix">Consulte tarifas</span>
+                        <span className="price price-sm">Sob Consulta</span>
+                      </>
+                    )}
+                  </div>
+                  <a
+                    href={waLink(suite.mensagem.replace('%CAFE%', cafeLabel))}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-outline-primary btn-block"
+                    onClick={() =>
+                      trackWhatsappClick(suite.id, {
+                        suite: suite.nome,
+                        ...(suite.tarifa ? { cafe_da_manha: withBreakfast } : {}),
+                      })
+                    }
+                  >
+                    {suite.ctaLabel}
+                  </a>
                 </div>
-                <a
-                  href={waLink(`Olá! Vim pelo site e quero reservar a Suíte Família (${cafeLabel}).`)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-outline-primary btn-block"
-                  onClick={() => trackWhatsappClick('suite-familia', { suite: 'Suíte Família', cafe_da_manha: withBreakfast })}
-                >
-                  Consultar Disponibilidade
-                </a>
-              </div>
-            </div>
-
-            {/* Suíte 3 */}
-            <div className="suite-card">
-              <div className="suite-img-container">
-                <img
-                  src="fotos-fenix/quartos/pousada-fenix-litoral-pr-suite-hidromassagem-jacuzzi-5.jpg"
-                  alt="Suíte Familiar para até 5 hóspedes da Pousada Fênix"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div className="suite-info">
-                <h3>Suíte Familiar</h3>
-                <p className="suite-desc">
-                  Ideal para grupos médios. Conforto compartilhado em um espaço amplo com camas
-                  planejadas.
-                </p>
-                <ul className="suite-amenities">
-                  <li><i className="fa-solid fa-users" aria-hidden="true"></i> Até 5 Hóspedes</li>
-                  <li><i className="fa-solid fa-snowflake" aria-hidden="true"></i> Ar-condicionado</li>
-                  <li><i className="fa-solid fa-tv" aria-hidden="true"></i> Smart TV</li>
-                  <li><i className="fa-solid fa-mattress-pillow" aria-hidden="true"></i> Cama de Casal + Beliche</li>
-                  <li><i className="fa-solid fa-kitchen-set" aria-hidden="true"></i> Frigobar</li>
-                </ul>
-                <div className="suite-pricing">
-                  <span className="price-prefix">A partir de</span>
-                  <span className="price">{tarifas.familiar}</span>
-                  <span className="price-suffix">/ diária</span>
-                </div>
-                <a
-                  href={waLink(`Olá! Vim pelo site e quero reservar a Suíte Familiar (${cafeLabel}).`)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-outline-primary btn-block"
-                  onClick={() => trackWhatsappClick('suite-familiar', { suite: 'Suíte Familiar', cafe_da_manha: withBreakfast })}
-                >
-                  Consultar Disponibilidade
-                </a>
-              </div>
-            </div>
-
-            {/* Suíte 4 */}
-            <div className="suite-card">
-              <div className="suite-img-container">
-                <img
-                  src="fotos-fenix/quartos/pousada-fenix-pontal-do-parana-decoracao-cama-casal-cisnes.jpeg"
-                  alt="Suíte para grupos com duas camas de casal e beliches na Pousada Fênix"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div className="suite-info">
-                <h3>Suíte Grupo (Quarto 2)</h3>
-                <p className="suite-desc">
-                  Ampla suíte familiar equipada com 2 camas de casal e 2 beliches, ideal para grandes
-                  grupos e excursões.
-                </p>
-                <ul className="suite-amenities">
-                  <li><i className="fa-solid fa-users" aria-hidden="true"></i> Até 7 Hóspedes</li>
-                  <li><i className="fa-solid fa-snowflake" aria-hidden="true"></i> Ar-condicionado</li>
-                  <li><i className="fa-solid fa-tv" aria-hidden="true"></i> Smart TV</li>
-                  <li><i className="fa-solid fa-bed" aria-hidden="true"></i> 2 Casal + 2 Beliches</li>
-                  <li><i className="fa-solid fa-wifi" aria-hidden="true"></i> Wi-Fi de alta velocidade</li>
-                </ul>
-                <div className="suite-pricing">
-                  <span className="price-prefix">Consulte tarifas</span>
-                  <span className="price price-sm">Sob Consulta</span>
-                </div>
-                <a
-                  href={waLink('Olá! Vim pelo site e quero consultar preços para a Suíte Grupo (Quarto 2).')}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-outline-primary btn-block"
-                  onClick={() => trackWhatsappClick('suite-grupo', { suite: 'Suíte Grupo (Quarto 2)' })}
-                >
-                  Solicitar Cotação
-                </a>
-              </div>
-            </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -553,28 +459,25 @@ export default function App() {
             <span className="section-badge">Galeria de Fotos</span>
             <h2 className="section-title">Explore as fotos da nossa pousada</h2>
             <p className="section-subtitle">
-              Clique nas categorias abaixo para navegar pelas imagens reais das nossas instalações.
+              São {totalFotos} fotos reais das nossas instalações. Escolha uma categoria e clique em
+              qualquer imagem para ampliar.
             </p>
           </div>
 
           <div className="gallery-tabs" role="tablist" aria-label="Categorias da galeria">
-            {([
-              ['quartos', 'Quartos & Suítes'],
-              ['piscina', 'Piscina & Lazer'],
-              ['comida-cafe-almoco', 'Restaurante & Café'],
-            ] as const).map(([key, label]) => (
+            {GALLERY_CATEGORIES.map((cat) => (
               <button
-                key={key}
+                key={cat.key}
                 type="button"
                 role="tab"
-                aria-selected={currentCategory === key}
-                className={`tab-btn ${currentCategory === key ? 'active' : ''}`}
+                aria-selected={currentCategory === cat.key}
+                className={`tab-btn ${currentCategory === cat.key ? 'active' : ''}`}
                 onClick={() => {
-                  setCurrentCategory(key);
-                  setItemsShown(8);
+                  setCurrentCategory(cat.key);
+                  setItemsShown(GALERIA_PASSO);
                 }}
               >
-                {label}
+                {cat.label} <span className="tab-count">{IMAGES[cat.key].length}</span>
               </button>
             ))}
           </div>
@@ -587,7 +490,7 @@ export default function App() {
                   type="button"
                   className="gallery-item"
                   key={imgName}
-                  onClick={() => openLightbox(i)}
+                  onClick={() => abrirGaleriaNoLightbox(i)}
                   aria-label={`Ampliar foto: ${caption}`}
                 >
                   <img
@@ -610,9 +513,10 @@ export default function App() {
                 type="button"
                 id="btnShowMore"
                 className="btn btn-primary"
-                onClick={() => setItemsShown((prev) => prev + 8)}
+                onClick={() => setItemsShown((prev) => prev + GALERIA_PASSO)}
               >
-                Mostrar Mais
+                Mostrar mais {Math.min(GALERIA_PASSO, images.length - itemsShown)} fotos
+                <span className="btn-hint">({itemsShown} de {images.length})</span>
               </button>
             </div>
           )}
@@ -847,48 +751,52 @@ export default function App() {
       </div>
 
       {/* Lightbox */}
-      {lightboxOpen && lightboxImage && (
+      {lightbox && (
         <div
           id="lightbox"
           className="lightbox"
           role="dialog"
           aria-modal="true"
           aria-label="Visualização ampliada da foto"
-          onClick={() => setLightboxOpen(false)}
+          onClick={() => setLightbox(null)}
         >
           <button
             type="button"
             className="close-lightbox"
             aria-label="Fechar"
-            onClick={() => setLightboxOpen(false)}
+            onClick={() => setLightbox(null)}
           >
             &times;
           </button>
           <img
             className="lightbox-content"
-            src={`fotos-fenix/${currentCategory}/${lightboxImage}`}
-            alt={formatCaption(lightboxImage)}
+            src={lightbox.fotos[lightbox.idx].src}
+            alt={lightbox.fotos[lightbox.idx].alt}
             onClick={(e) => e.stopPropagation()}
           />
           <div className="lightbox-caption">
-            {formatCaption(lightboxImage)} ({lightboxIdx + 1}/{images.length})
+            {lightbox.fotos[lightbox.idx].alt} ({lightbox.idx + 1}/{lightbox.fotos.length})
           </div>
-          <button
-            type="button"
-            className="prev-lightbox"
-            aria-label="Foto anterior"
-            onClick={(e) => navigateLightbox(-1, e)}
-          >
-            &#10094;
-          </button>
-          <button
-            type="button"
-            className="next-lightbox"
-            aria-label="Próxima foto"
-            onClick={(e) => navigateLightbox(1, e)}
-          >
-            &#10095;
-          </button>
+          {lightbox.fotos.length > 1 && (
+            <>
+              <button
+                type="button"
+                className="prev-lightbox"
+                aria-label="Foto anterior"
+                onClick={(e) => navigateLightbox(-1, e)}
+              >
+                &#10094;
+              </button>
+              <button
+                type="button"
+                className="next-lightbox"
+                aria-label="Próxima foto"
+                onClick={(e) => navigateLightbox(1, e)}
+              >
+                &#10095;
+              </button>
+            </>
+          )}
         </div>
       )}
     </div>
