@@ -1,0 +1,7 @@
+# Regras 301 primeiro; o fallback de SPA fica SEMPRE por último
+# (qualquer regra depois do catch-all nunca executa).
+
+/index.html            /                       301!
+
+# Fallback SPA
+/*                     /index.html             200
