@@ -1758,6 +1758,14 @@ body {
     }
 }
 
+.carousel-arrow svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+    stroke: currentColor;
+    pointer-events: none;
+}
+
 /* Contador de fotos */
 .carousel-counter {
     position: absolute;
@@ -1775,6 +1783,15 @@ body {
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.3px;
+    pointer-events: none;
+}
+
+.carousel-counter svg {
+    width: 13px;
+    height: 13px;
+    display: inline-block;
+    vertical-align: middle;
+    stroke: currentColor;
     pointer-events: none;
 }
 

@@ -101,7 +101,9 @@ export default function Carousel({ fotos, ariaLabel, onExpand, prioridade = fals
               aria-label="Foto anterior"
               onClick={() => irPara(indice - 1)}
             >
-              <i className="fa-solid fa-chevron-left" aria-hidden="true"></i>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
             </button>
             <button
               type="button"
@@ -109,10 +111,17 @@ export default function Carousel({ fotos, ariaLabel, onExpand, prioridade = fals
               aria-label="Próxima foto"
               onClick={() => irPara(indice + 1)}
             >
-              <i className="fa-solid fa-chevron-right" aria-hidden="true"></i>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
             </button>
             <span className="carousel-counter" aria-hidden="true">
-              <i className="fa-regular fa-images"></i> {indice + 1}/{total}
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                <polyline points="21 15 16 10 5 21"></polyline>
+              </svg>
+              {indice + 1}/{total}
             </span>
           </>
         )}

@@ -5,6 +5,19 @@
 
 export const IMAGES: Record<string, string[]> = {
   "quartos": [
+    "pousada-fenix-ap-25-1.webp",
+    "pousada-fenix-ap-25-2.webp",
+    "pousada-fenix-ap-25-3.webp",
+    "pousada-fenix-ap-21-1.webp",
+    "pousada-fenix-ap-21-2.webp",
+    "pousada-fenix-ap-21-3.webp",
+    "pousada-fenix-ap-21-4.webp",
+    "pousada-fenix-quarto-26-1.webp",
+    "pousada-fenix-quarto-26-2.webp",
+    "pousada-fenix-quarto-26-3.webp",
+    "pousada-fenix-quarto-26-4.webp",
+    "pousada-fenix-quarto-26-5.webp",
+    "pousada-fenix-quarto-26-6.webp",
     "pousada-fenix-litoral-pr-suite-hidromassagem-jacuzzi-3.webp",
     "pousada-fenix-litoral-pr-suite-hidromassagem-jacuzzi-4.webp",
     "pousada-fenix-litoral-pr-suite-hidromassagem-jacuzzi-5.webp",
@@ -68,11 +81,8 @@ export const IMAGES: Record<string, string[]> = {
     "pousada-fenix-litoral-pr-piscina-ao-ar-livre-2.webp",
     "pousada-fenix-litoral-pr-piscina-ao-ar-livre-3.webp",
     "pousada-fenix-litoral-pr-piscina-ao-ar-livre-4.webp",
-    "pousada-fenix-litoral-pr-piscina-ao-ar-livre-5.webp",
     "pousada-fenix-piscina-ao-ar-livre-premium-1.webp",
-    "pousada-fenix-piscina-lazer-1.webp",
     "pousada-fenix-piscina-lazer-2.webp",
-    "pousada-fenix-piscina-lazer-3.webp",
   ],
   "comida-cafe-almoco": [
     "pousada-fenix-litoral-pr-area-externa-jardim-3.webp",

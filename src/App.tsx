@@ -317,10 +317,10 @@ export default function App() {
             <div className="image-box">
               <img
                 src="fotos-fenix/piscina/pousada-fenix-litoral-pr-piscina-ao-ar-livre-1.webp"
-                alt="Piscina externa da Pousada Fênix em Praia de Leste"
+                alt="Piscina externa e fachada da Pousada Fênix em Praia de Leste"
                 className="main-img"
-                width={576}
-                height={768}
+                width={800}
+                height={800}
                 loading="lazy"
                 decoding="async"
               />
@@ -659,7 +659,7 @@ export default function App() {
                 <i className="fa-solid fa-location-dot" aria-hidden="true"></i>
                 <div>
                   <h3>Nosso Endereço</h3>
-                  <p>Al. Paranaguá, 1310 - Praia de Leste, Pontal do Paraná - PR</p>
+                  <p>R. Dário Veloso, 287 - Praia de Leste, Pontal do Paraná - PR, 83255-000</p>
                 </div>
               </div>
               <div className="contact-item">
@@ -695,7 +695,7 @@ export default function App() {
 
           <div className="contato-mapa">
             <iframe
-              src="https://www.google.com/maps?q=Al.+Paranagu%C3%A1,+1310+-+Praia+de+Leste,+Pontal+do+Paran%C3%A1+-+PR&output=embed"
+              src="https://www.google.com/maps?q=R.+D%C3%A1rio+Veloso,+287+-+Praia+de+Leste,+Pontal+do+Paran%C3%A1+-+PR,+83255-000&output=embed"
               style={{ border: 0, width: '100%', height: '100%', minHeight: '380px', borderRadius: '18px' }}
               allowFullScreen={true}
               loading="lazy"
@@ -732,7 +732,7 @@ export default function App() {
             <h4>Contato</h4>
             <p><i className="fa-solid fa-phone" aria-hidden="true"></i> +55 41 98904-7277</p>
             <p><i className="fa-solid fa-envelope" aria-hidden="true"></i> fenixpousadaerestaurante@gmail.com</p>
-            <p><i className="fa-solid fa-location-dot" aria-hidden="true"></i> Al. Paranaguá, 1310 - Pontal do Paraná/PR</p>
+            <p><i className="fa-solid fa-location-dot" aria-hidden="true"></i> R. Dário Veloso, 287 - Praia de Leste, Pontal do Paraná/PR</p>
           </div>
         </div>
         <div className="container footer-bottom text-center">
