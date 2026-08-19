@@ -74,11 +74,11 @@ export const SUITES: Suite[] = [
     ctaLabel: 'Consultar Disponibilidade',
     mensagem: 'Olá! Vim pelo site e quero reservar a Suíte Família Deluxe (%CAFE%).',
     fotos: [
-      { arquivo: Q + 'pousada-fenix-pontal-do-parana-quarto-familia-camas-solteiro.webp', alt: 'Suíte família com camas de solteiro da Pousada Fênix' },
-      { arquivo: Q + 'pousada-fenix-praia-de-leste-quarto-casal-ar-condicionado-tv.webp', alt: 'Quarto de casal com ar-condicionado e Smart TV' },
-      { arquivo: Q + 'pousada-fenix-pontal-do-parana-quartos-com-ar-condicionado-2.webp', alt: 'Quarto climatizado da Pousada Fênix' },
-      { arquivo: Q + 'pousada-fenix-pontal-do-parana-quartos-com-ar-condicionado-3.webp', alt: 'Vista interna do quarto climatizado' },
-      { arquivo: Q + 'pousada-fenix-praia-de-leste-suite-casal-vista-quarto.webp', alt: 'Suíte de casal vista do quarto' },
+      { arquivo: Q + 'pousada-fenix-suite-familia-deluxe-cama-1.png', alt: 'Suíte Família Deluxe - Cama de casal, solteiro e frigobar' },
+      { arquivo: Q + 'pousada-fenix-suite-familia-deluxe-cama-2.png', alt: 'Suíte Família Deluxe - Estante de madeira, Smart TV e espelho' },
+      { arquivo: Q + 'pousada-fenix-suite-familia-deluxe-cama-3.png', alt: 'Suíte Família Deluxe - Camas, ar-condicionado e cortinas' },
+      { arquivo: Q + 'pousada-fenix-suite-familia-deluxe-banheiro-1.png', alt: 'Suíte Família Deluxe - Banheiro privativo com pia e box de vidro' },
+      { arquivo: Q + 'pousada-fenix-suite-familia-deluxe-cama-4.png', alt: 'Suíte Família Deluxe - Configuração alternativa com camas arrumadas' },
     ],
     tabelaPrecos: [
       { hospedes: 2, semCafe: 'R$ 238', comCafe: 'R$ 288' },
