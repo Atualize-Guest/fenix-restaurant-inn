@@ -10,8 +10,8 @@ import { captureTracking, trackWhatsappClick } from './tracking';
 /* ------------------------------------------------------------------ */
 
 const RATES = {
-  comCafe: { hidro: 'R$ 440', familia: 'R$ 540', familiar: 'R$ 900' },
-  semCafe: { hidro: 'R$ 380', familia: 'R$ 465', familiar: 'R$ 780' },
+  comCafe: { hidro: 'R$ 440', familia: 'R$ 540', familiar: 'R$ 625' },
+  semCafe: { hidro: 'R$ 380', familia: 'R$ 465', familiar: 'R$ 525' },
 };
 
 const SECTIONS = ['home', 'sobre', 'suites', 'galeria', 'depoimentos', 'faq', 'contato'];
@@ -440,6 +440,25 @@ export default function App() {
                       </>
                     )}
                   </div>
+
+                  {suite.tabelaPrecos && (
+                    <div className="suite-price-table">
+                      <div className="price-table-header">
+                        <span>Hóspedes</span>
+                        <span>Diária {withBreakfast ? '(c/ Café)' : '(s/ Café)'}</span>
+                      </div>
+                      {suite.tabelaPrecos.map((row) => (
+                        <div className="price-table-row" key={row.hospedes}>
+                          <span>
+                            <i className="fa-solid fa-user" aria-hidden="true"></i> × {row.hospedes}
+                          </span>
+                          <span className="price-table-value">
+                            {withBreakfast ? row.comCafe : row.semCafe}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                   <a
                     href={waLink(suite.mensagem.replace('%CAFE%', cafeLabel))}
                     target="_blank"

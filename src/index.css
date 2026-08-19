@@ -816,6 +816,49 @@ input:checked + .slider:before {
     font-weight: 600;
 }
 
+/* Tabela de preços por ocupação de hóspedes */
+.suite-price-table {
+    width: 100%;
+    margin-bottom: 24px;
+    background: rgba(12, 14, 18, 0.02);
+    border-radius: 8px;
+    padding: 12px;
+    border: 1px dashed rgba(12, 14, 18, 0.1);
+    box-sizing: border-box;
+}
+
+.price-table-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    font-weight: 700;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(12, 14, 18, 0.08);
+    padding-bottom: 6px;
+    margin-bottom: 6px;
+}
+
+.price-table-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    padding: 4px 0;
+}
+
+.price-table-row i {
+    color: var(--accent-primary);
+    font-size: 0.75rem;
+}
+
+.price-table-value {
+    color: var(--accent-primary);
+    font-weight: 800;
+}
+
 /* Gallery Section (Galeria) - Premium dynamic grid */
 .galeria {
     background-color: var(--bg-secondary);

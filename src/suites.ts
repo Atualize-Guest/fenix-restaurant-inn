@@ -21,6 +21,7 @@ export interface Suite {
   /** Mensagem do WhatsApp; `%CAFE%` é trocado pela opção de café escolhida. */
   mensagem: string;
   fotos: { arquivo: string; alt: string }[];
+  tabelaPrecos?: { hospedes: number; semCafe: string; comCafe: string }[];
 }
 
 const Q = 'fotos-fenix/quartos/';
@@ -76,34 +77,31 @@ export const SUITES: Suite[] = [
   },
   {
     id: 'suite-familiar',
-    nome: 'Suíte Familiar',
+    nome: 'Quarto Família com Banheiro Privativo',
     descricao:
-      'Espaço amplo e confortável para até 5 hóspedes. Opções nos apartamentos Ap. 21, Ap. 25 e Quarto 26, com diversas configurações de camas, ar-condicionado e frigobar.',
+      'Espaço conjugado de 25 m² perfeito para grupos e famílias. Oferece ar-condicionado, TV de tela plana com streaming (Netflix), geladeira, banheiro privativo e área para refeições ao ar livre. Camas confortáveis (nota 7,3).',
     comodidades: [
-      { icone: 'fa-users', texto: 'Até 5 Hóspedes (Ap. 21, 25 e 26)' },
+      { icone: 'fa-compress', texto: 'Tamanho: 25 m²' },
+      { icone: 'fa-bed', texto: '2 camas de casal e 2 beliches' },
       { icone: 'fa-snowflake', texto: 'Ar-condicionado' },
-      { icone: 'fa-tv', texto: 'Smart TV' },
-      { icone: 'fa-bed', texto: 'Casal + Viúva + Solteiro' },
-      { icone: 'fa-kitchen-set', texto: 'Frigobar e Banheiro Privativo' },
-      { icone: 'fa-wifi', texto: 'Wi-Fi Grátis' },
+      { icone: 'fa-tv', texto: 'TV Smart c/ Streaming' },
+      { icone: 'fa-kitchen-set', texto: 'Geladeira e Mesa de Refeição' },
+      { icone: 'fa-wifi', texto: 'WiFi Gratuito' },
     ],
     tarifa: 'familiar',
     ctaLabel: 'Consultar Disponibilidade',
-    mensagem: 'Olá! Vim pelo site e quero reservar a Suíte Familiar (%CAFE%).',
+    mensagem: 'Olá! Vim pelo site e quero reservar o Quarto Família com Banheiro Privativo (%CAFE%).',
     fotos: [
-      { arquivo: Q + 'pousada-fenix-ap-25-1.webp', alt: 'Ap. 25 - Suíte familiar para 5 pessoas (2 camas de casal + 1 solteiro)' },
-      { arquivo: Q + 'pousada-fenix-ap-25-2.webp', alt: 'Ap. 25 - Quarto climatizado com Smart TV' },
-      { arquivo: Q + 'pousada-fenix-ap-25-3.webp', alt: 'Ap. 25 - Vista das camas e conforto' },
-      { arquivo: Q + 'pousada-fenix-ap-21-1.webp', alt: 'Ap. 21 - Suíte para 5 pessoas (1 cama casal, 1 viúva e 2 solteiro)' },
-      { arquivo: Q + 'pousada-fenix-ap-21-2.webp', alt: 'Ap. 21 - Climatização, TV e frigobar' },
-      { arquivo: Q + 'pousada-fenix-ap-21-3.webp', alt: 'Ap. 21 - Disposição de camas aconchegantes' },
-      { arquivo: Q + 'pousada-fenix-ap-21-4.webp', alt: 'Ap. 21 - Banheiro privativo' },
-      { arquivo: Q + 'pousada-fenix-quarto-26-1.webp', alt: 'Quarto 26 - Apartamento para até 5 pessoas climatizado' },
-      { arquivo: Q + 'pousada-fenix-quarto-26-2.webp', alt: 'Quarto 26 - Cama de casal e Smart TV' },
-      { arquivo: Q + 'pousada-fenix-quarto-26-3.webp', alt: 'Quarto 26 - Vista interna do quarto' },
-      { arquivo: Q + 'pousada-fenix-quarto-26-4.webp', alt: 'Quarto 26 - Camas adicionais e ventilação' },
-      { arquivo: Q + 'pousada-fenix-quarto-26-5.webp', alt: 'Quarto 26 - Banheiro privativo' },
-      { arquivo: Q + 'pousada-fenix-quarto-26-6.webp', alt: 'Quarto 26 - Ambiente amplo para famílias' },
+      { arquivo: Q + 'pousada-fenix-quarto-familia-privativo-cama-1.png', alt: 'Quarto Família - Vista das camas de casal e beliche' },
+      { arquivo: Q + 'pousada-fenix-quarto-familia-privativo-cama-2.png', alt: 'Quarto Família - Beliche, TV e ventilador de parede' },
+      { arquivo: Q + 'pousada-fenix-quarto-familia-privativo-cama-3.png', alt: 'Quarto Família - Outro ambiente com camas e ar-condicionado' },
+      { arquivo: Q + 'pousada-fenix-quarto-familia-privativo-refeicao.png', alt: 'Quarto Família - Entrada com geladeira e cabideiros de toalha' },
+      { arquivo: Q + 'pousada-fenix-quarto-familia-privativo-banheiro.png', alt: 'Quarto Família - Banheiro privativo limpo com box de vidro' },
+    ],
+    tabelaPrecos: [
+      { hospedes: 4, semCafe: 'R$ 525', comCafe: 'R$ 625' },
+      { hospedes: 5, semCafe: 'R$ 602', comCafe: 'R$ 727' },
+      { hospedes: 6, semCafe: 'R$ 700', comCafe: 'R$ 850' },
     ],
   },
   {
