@@ -10,8 +10,8 @@ import { captureTracking, trackWhatsappClick } from './tracking';
 /* ------------------------------------------------------------------ */
 
 const RATES = {
-  comCafe: { hidro: 'R$ 350', familia: 'R$ 288', familiar: 'R$ 625' },
-  semCafe: { hidro: 'R$ 300', familia: 'R$ 238', familiar: 'R$ 525' },
+  comCafe: { hidro: 'R$ 350', familia: 'R$ 288', familiar: 'R$ 625', grupo: 'R$ 425' },
+  semCafe: { hidro: 'R$ 300', familia: 'R$ 238', familiar: 'R$ 525', grupo: 'R$ 350' },
 };
 
 const SECTIONS = ['home', 'sobre', 'suites', 'galeria', 'depoimentos', 'faq', 'contato'];

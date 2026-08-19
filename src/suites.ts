@@ -7,7 +7,7 @@
  * material de campanha — foto de quarto errado no anúncio gera reclamação.
  */
 
-export type RateKey = 'hidro' | 'familia' | 'familiar';
+export type RateKey = 'hidro' | 'familia' | 'familiar' | 'grupo';
 
 export interface Suite {
   id: string;
@@ -116,24 +116,32 @@ export const SUITES: Suite[] = [
   },
   {
     id: 'suite-grupo',
-    nome: 'Suíte Grupo (Quarto 2)',
+    nome: 'Quarto Família Standard',
     descricao:
-      'Ampla suíte familiar equipada com 2 camas de casal e 2 beliches, ideal para grandes grupos e excursões.',
+      'Espaço amplo de 25 m² ideal para famílias e grupos. Oferece vista do pátio interno, ar-condicionado, TV de tela plana com streaming (Netflix), frigobar e banheiro privativo. A unidade conta com 2 camas de solteiro, 1 cama de casal e 1 beliche.',
     comodidades: [
-      { icone: 'fa-users', texto: 'Até 7 Hóspedes' },
+      { icone: 'fa-compress', texto: 'Tamanho: 25 m²' },
+      { icone: 'fa-bed', texto: '1 cama casal, 2 solteiro e 1 beliche' },
       { icone: 'fa-snowflake', texto: 'Ar-condicionado' },
-      { icone: 'fa-tv', texto: 'Smart TV' },
-      { icone: 'fa-bed', texto: '2 Casal + 2 Beliches' },
-      { icone: 'fa-wifi', texto: 'Wi-Fi de alta velocidade' },
+      { icone: 'fa-tv', texto: 'TV Smart e Frigobar' },
+      { icone: 'fa-tree', texto: 'Vista do pátio interno' },
+      { icone: 'fa-wifi', texto: 'WiFi Gratuito' },
     ],
-    ctaLabel: 'Solicitar Cotação',
-    mensagem: 'Olá! Vim pelo site e quero consultar preços para a Suíte Grupo (Quarto 2).',
+    tarifa: 'grupo',
+    ctaLabel: 'Consultar Disponibilidade',
+    mensagem: 'Olá! Vim pelo site e quero reservar o Quarto Família Standard (%CAFE%).',
     fotos: [
-      { arquivo: Q + 'pousada-fenix-pontal-do-parana-decoracao-cama-casal-cisnes.webp', alt: 'Cama de casal com decoração de cisnes na suíte de grupo' },
-      { arquivo: Q + 'pousada-fenix-suite-casal-1.webp', alt: 'Suíte ampla para grupos da Pousada Fênix' },
-      { arquivo: Q + 'pousada-fenix-suite-casal-3.webp', alt: 'Camas da suíte para grupos da Pousada Fênix' },
-      { arquivo: Q + 'pousada-fenix-suite-casal-4.webp', alt: 'Vista da suíte para grupos e excursões' },
-      { arquivo: Q + 'pousada-fenix-suite-casal-5.webp', alt: 'Ambiente da suíte para grandes grupos' },
+      { arquivo: Q + 'pousada-fenix-pontal-do-parana-decoracao-cama-casal-cisnes.webp', alt: 'Quarto Família Standard - Cama de casal decorada' },
+      { arquivo: Q + 'pousada-fenix-suite-casal-1.webp', alt: 'Quarto Família Standard - Ambiente amplo com beliche e camas' },
+      { arquivo: Q + 'pousada-fenix-suite-casal-3.webp', alt: 'Quarto Família Standard - Vista das camas de solteiro adicionais' },
+      { arquivo: Q + 'pousada-fenix-suite-casal-4.webp', alt: 'Quarto Família Standard - Janela e área de circulação' },
+      { arquivo: Q + 'pousada-fenix-suite-casal-5.webp', alt: 'Quarto Família Standard - Armário e frigobar do quarto' },
+    ],
+    tabelaPrecos: [
+      { hospedes: 3, semCafe: 'R$ 350', comCafe: 'R$ 425' },
+      { hospedes: 4, semCafe: 'R$ 469', comCafe: 'R$ 569' },
+      { hospedes: 5, semCafe: 'R$ 588', comCafe: 'R$ 713' },
+      { hospedes: 6, semCafe: 'R$ 700', comCafe: 'R$ 850' },
     ],
   },
 ];
