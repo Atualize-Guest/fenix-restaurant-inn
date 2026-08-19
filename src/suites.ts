@@ -29,26 +29,31 @@ const Q = 'fotos-fenix/quartos/';
 export const SUITES: Suite[] = [
   {
     id: 'suite-hidromassagem',
-    nome: 'Suíte com Hidromassagem',
+    nome: 'Suíte Queen com Banheira de Hidromassagem',
     badge: 'Premium',
     descricao:
-      'Perfeita para casais. Privacidade, banheira de hidromassagem privativa e enxoval especial para momentos relaxantes.',
+      'Perfeita para casais. Oferece privacidade total, cama de casal grande, banheira de hidromassagem privativa, ar-condicionado, TV de tela plana com serviços de streaming e frigobar. Tamanho de 20 m².',
     comodidades: [
-      { icone: 'fa-user-friends', texto: '2 Adultos' },
-      { icone: 'fa-bath', texto: 'Hidromassagem' },
+      { icone: 'fa-compress', texto: 'Tamanho: 20 m²' },
+      { icone: 'fa-bed', texto: '1 cama de casal grande' },
+      { icone: 'fa-bath', texto: 'Banheira de Hidromassagem' },
       { icone: 'fa-snowflake', texto: 'Ar-condicionado' },
-      { icone: 'fa-tv', texto: 'Smart TV' },
-      { icone: 'fa-wind', texto: 'Secador (Quarto 8)' },
+      { icone: 'fa-tv', texto: 'Smart TV e Frigobar' },
+      { icone: 'fa-wifi', texto: 'WiFi Gratuito' },
     ],
     tarifa: 'hidro',
     ctaLabel: 'Consultar Disponibilidade',
-    mensagem: 'Olá! Vim pelo site e quero reservar a Suíte com Hidromassagem (%CAFE%).',
+    mensagem: 'Olá! Vim pelo site e quero reservar a Suíte Queen com Banheira de Hidromassagem (%CAFE%).',
     fotos: [
       { arquivo: Q + 'pousada-fenix-suite-hidromassagem-cama-1.png', alt: 'Cama de casal da suíte com hidromassagem da Pousada Fênix' },
       { arquivo: Q + 'pousada-fenix-suite-hidromassagem-banheira-1.png', alt: 'Banheira de hidromassagem com espuma e TV Netflix ligada' },
       { arquivo: Q + 'pousada-fenix-suite-hidromassagem-banheira-2.jpg', alt: 'Pia do banheiro e banheira de hidromassagem' },
       { arquivo: Q + 'pousada-fenix-suite-hidromassagem-cama-2.png', alt: 'Cama de casal vista com espelho decorativo' },
       { arquivo: Q + 'pousada-fenix-suite-hidromassagem-banheiro-1.png', alt: 'Banheiro privativo com box de vidro e chuveiro' },
+    ],
+    tabelaPrecos: [
+      { hospedes: 1, semCafe: 'R$ 240', comCafe: 'R$ 265' },
+      { hospedes: 2, semCafe: 'R$ 300', comCafe: 'R$ 350' },
     ],
   },
   {
