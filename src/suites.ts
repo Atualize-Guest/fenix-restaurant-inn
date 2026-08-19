@@ -43,12 +43,11 @@ export const SUITES: Suite[] = [
     ctaLabel: 'Consultar Disponibilidade',
     mensagem: 'Olá! Vim pelo site e quero reservar a Suíte com Hidromassagem (%CAFE%).',
     fotos: [
-      { arquivo: Q + 'pousada-fenix-praia-de-leste-suite-hidromassagem-jacuzzi.webp', alt: 'Banheira de hidromassagem da suíte premium da Pousada Fênix' },
-      { arquivo: Q + 'pousada-fenix-litoral-pr-suite-hidromassagem-jacuzzi-3.webp', alt: 'Suíte com hidromassagem vista do quarto' },
-      { arquivo: Q + 'pousada-fenix-litoral-pr-suite-hidromassagem-jacuzzi-4.webp', alt: 'Cama de casal da suíte com hidromassagem' },
-      { arquivo: Q + 'pousada-fenix-litoral-pr-suite-hidromassagem-jacuzzi-5.webp', alt: 'Detalhe da banheira de hidromassagem privativa' },
-      { arquivo: Q + 'pousada-fenix-litoral-pr-suite-hidromassagem-jacuzzi-6.webp', alt: 'Ambiente da suíte com hidromassagem da Pousada Fênix' },
-      { arquivo: Q + 'pousada-fenix-pontal-do-parana-banheiro-suite-box.webp', alt: 'Banheiro com box da suíte da Pousada Fênix' },
+      { arquivo: Q + 'pousada-fenix-suite-hidromassagem-cama-1.png', alt: 'Cama de casal da suíte com hidromassagem da Pousada Fênix' },
+      { arquivo: Q + 'pousada-fenix-suite-hidromassagem-banheira-1.png', alt: 'Banheira de hidromassagem com espuma e TV Netflix ligada' },
+      { arquivo: Q + 'pousada-fenix-suite-hidromassagem-banheira-2.jpg', alt: 'Pia do banheiro e banheira de hidromassagem' },
+      { arquivo: Q + 'pousada-fenix-suite-hidromassagem-cama-2.png', alt: 'Cama de casal vista com espelho decorativo' },
+      { arquivo: Q + 'pousada-fenix-suite-hidromassagem-banheiro-1.png', alt: 'Banheiro privativo com box de vidro e chuveiro' },
     ],
   },
   {
