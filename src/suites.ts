@@ -58,26 +58,31 @@ export const SUITES: Suite[] = [
   },
   {
     id: 'suite-familia',
-    nome: 'Suíte Família',
+    nome: 'Suíte Família Deluxe',
     badge: 'Recomendado',
     descricao:
-      'Ideal para famílias pequenas. Espaço aconchegante com cama de casal e solteiro com ótima ventilação.',
+      'Perfeita para famílias pequenas. A suíte de 20 m² oferece 1 cama de casal e 1 de solteiro (confortáveis, nota 7,3). Conta com ar-condicionado, TV de tela plana com streaming (Netflix), frigobar, banheiro privativo e área para refeições ao ar livre.',
     comodidades: [
-      { icone: 'fa-user-friends', texto: '2 Hóspedes + 1 Criança' },
+      { icone: 'fa-compress', texto: 'Tamanho: 20 m²' },
+      { icone: 'fa-bed', texto: '1 cama casal + 1 solteiro' },
       { icone: 'fa-snowflake', texto: 'Ar-condicionado' },
-      { icone: 'fa-tv', texto: 'Smart TV' },
-      { icone: 'fa-wifi', texto: 'Wi-Fi Grátis' },
-      { icone: 'fa-baby', texto: 'Crianças até 5a grátis' },
+      { icone: 'fa-tv', texto: 'TV Smart c/ Streaming' },
+      { icone: 'fa-kitchen-set', texto: 'Frigobar e Refeição Externa' },
+      { icone: 'fa-wifi', texto: 'WiFi Gratuito' },
     ],
     tarifa: 'familia',
     ctaLabel: 'Consultar Disponibilidade',
-    mensagem: 'Olá! Vim pelo site e quero reservar a Suíte Família (%CAFE%).',
+    mensagem: 'Olá! Vim pelo site e quero reservar a Suíte Família Deluxe (%CAFE%).',
     fotos: [
       { arquivo: Q + 'pousada-fenix-pontal-do-parana-quarto-familia-camas-solteiro.webp', alt: 'Suíte família com camas de solteiro da Pousada Fênix' },
       { arquivo: Q + 'pousada-fenix-praia-de-leste-quarto-casal-ar-condicionado-tv.webp', alt: 'Quarto de casal com ar-condicionado e Smart TV' },
       { arquivo: Q + 'pousada-fenix-pontal-do-parana-quartos-com-ar-condicionado-2.webp', alt: 'Quarto climatizado da Pousada Fênix' },
       { arquivo: Q + 'pousada-fenix-pontal-do-parana-quartos-com-ar-condicionado-3.webp', alt: 'Vista interna do quarto climatizado' },
       { arquivo: Q + 'pousada-fenix-praia-de-leste-suite-casal-vista-quarto.webp', alt: 'Suíte de casal vista do quarto' },
+    ],
+    tabelaPrecos: [
+      { hospedes: 2, semCafe: 'R$ 238', comCafe: 'R$ 288' },
+      { hospedes: 3, semCafe: 'R$ 350', comCafe: 'R$ 425' },
     ],
   },
   {
