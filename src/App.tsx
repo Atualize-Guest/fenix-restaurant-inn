@@ -1,9 +1,17 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { IMAGES, GALLERY_CATEGORIES, type GalleryCategory } from './images';
+import { IMAGES } from './images';
 import { SUITES } from './suites';
 import Carousel from './Carousel';
 import { WHATSAPP_NUMBER } from './config';
 import { captureTracking, trackWhatsappClick } from './tracking';
+
+export const GALLERY_CATEGORIES = [
+  { key: 'quartos', label: 'Quartos & Suítes' },
+  { key: 'piscina', label: 'Piscina & Lazer' },
+  { key: 'comida-cafe-almoco', label: 'Restaurante & Café' },
+] as const;
+
+export type GalleryCategory = (typeof GALLERY_CATEGORIES)[number]['key'];
 
 /* ------------------------------------------------------------------ */
 /* Constantes (fora do componente: não recriam a cada render)          */
