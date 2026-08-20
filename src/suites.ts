@@ -131,11 +131,11 @@ export const SUITES: Suite[] = [
     ctaLabel: 'Consultar Disponibilidade',
     mensagem: 'Olá! Vim pelo site e quero reservar o Quarto Família Standard (%CAFE%).',
     fotos: [
-      { arquivo: Q + 'pousada-fenix-pontal-do-parana-decoracao-cama-casal-cisnes.webp', alt: 'Quarto Família Standard - Cama de casal decorada' },
-      { arquivo: Q + 'pousada-fenix-suite-casal-1.webp', alt: 'Quarto Família Standard - Ambiente amplo com beliche e camas' },
-      { arquivo: Q + 'pousada-fenix-suite-casal-3.webp', alt: 'Quarto Família Standard - Vista das camas de solteiro adicionais' },
-      { arquivo: Q + 'pousada-fenix-suite-casal-4.webp', alt: 'Quarto Família Standard - Janela e área de circulação' },
-      { arquivo: Q + 'pousada-fenix-suite-casal-5.webp', alt: 'Quarto Família Standard - Armário e frigobar do quarto' },
+      { arquivo: Q + 'pousada-fenix-quarto-familia-standard-cama-1.png', alt: 'Quarto Família Standard - Cama de solteiro, ventilador e frigobar' },
+      { arquivo: Q + 'pousada-fenix-quarto-familia-standard-cama-2.png', alt: 'Quarto Família Standard - Beliche de madeira, cama de solteiro e TV' },
+      { arquivo: Q + 'pousada-fenix-quarto-familia-standard-cama-3.png', alt: 'Quarto Família Standard - Cama de casal e de solteiro com ar-condicionado' },
+      { arquivo: Q + 'pousada-fenix-quarto-familia-standard-cama-4.png', alt: 'Quarto Família Standard - Visão geral com sofás e beliche' },
+      { arquivo: Q + 'pousada-fenix-quarto-familia-standard-banheiro-1.png', alt: 'Quarto Família Standard - Banheiro privativo com box de vidro e pia' },
     ],
     tabelaPrecos: [
       { hospedes: 3, semCafe: 'R$ 350', comCafe: 'R$ 425' },
