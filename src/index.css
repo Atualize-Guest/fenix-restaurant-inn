@@ -338,7 +338,7 @@ img {
     padding-top: clamp(6.5rem, 5rem + 4vw, 8rem);
     padding-bottom: clamp(5rem, 3.5rem + 4vw, 6.5rem);
     text-align: center;
-    background-image: url('../public/fotos-fenix/piscina/pousada-fenix-litoral-pr-piscina-ao-ar-livre-1.webp');
+    background-image: url('/fotos-fenix/piscina/pousada-fenix-litoral-pr-piscina-ao-ar-livre-1.webp');
     background-size: cover;
     background-position: center;
     /* O scrim do texto e o blur dele passam da borda: contem o transbordo */
