@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { IMAGES } from './images';
 import { SUITES } from './suites';
 import Carousel from './Carousel';
-import { WHATSAPP_NUMBER } from './config';
+import { WHATSAPP_NUMBER, BOOKING_URL } from './config';
 import { captureTracking, trackWhatsappClick } from './tracking';
 
 export const GALLERY_CATEGORIES = [
@@ -18,8 +18,8 @@ export type GalleryCategory = (typeof GALLERY_CATEGORIES)[number]['key'];
 /* ------------------------------------------------------------------ */
 
 const RATES = {
-  comCafe: { hidro: 'R$ 350', familia: 'R$ 288', familiar: 'R$ 625', grupo: 'R$ 425' },
-  semCafe: { hidro: 'R$ 300', familia: 'R$ 238', familiar: 'R$ 525', grupo: 'R$ 350' },
+  comCafe: { ar: 'R$ 230', ventilador: 'R$ 180', hidro: 'R$ 350', tripla: 'R$ 288', familia: 'R$ 625', economica: 'R$ 425' },
+  semCafe: { ar: 'R$ 180', ventilador: 'R$ 130', hidro: 'R$ 300', tripla: 'R$ 238', familia: 'R$ 525', economica: 'R$ 350' },
 };
 
 const SECTIONS = ['home', 'sobre', 'suites', 'galeria', 'depoimentos', 'faq', 'contato'];
@@ -334,7 +334,7 @@ export default function App() {
               />
               <div className="experience-badge">
                 <span className="number">25</span>
-                <span className="text">Suítes Climatizadas</span>
+                <span className="text">Suítes (Até 100 Hóspedes)</span>
               </div>
             </div>
           </div>
@@ -366,6 +366,13 @@ export default function App() {
                 <div>
                   <h3>Piscina &amp; Lazer</h3>
                   <p>Piscina externa sempre limpa e área com mesas para socializar e relaxar.</p>
+                </div>
+              </div>
+              <div className="feature-item">
+                <i className="fa-solid fa-users" aria-hidden="true"></i>
+                <div>
+                  <h3>Ideal para Excursões &amp; Grupos</h3>
+                  <p>Com 25 suítes no total, nossa pousada acomoda confortavelmente até 100 hóspedes simultaneamente.</p>
                 </div>
               </div>
             </div>
@@ -484,6 +491,21 @@ export default function App() {
                 </div>
               </article>
             ))}
+          </div>
+
+          <div className="booking-callout">
+            <h3>Quer ver todas as nossas 25 acomodações?</h3>
+            <p>
+              Oferecemos tarifas sob medida para casais, famílias e grandes grupos. Consulte todas as nossas opções de quartos, datas e realize sua reserva com segurança diretamente pelo Booking.com.
+            </p>
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-booking"
+            >
+              <i className="fa-solid fa-hotel"></i> Ver todos os quartos no Booking.com
+            </a>
           </div>
         </div>
       </section>

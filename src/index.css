@@ -338,7 +338,7 @@ img {
     padding-top: clamp(6.5rem, 5rem + 4vw, 8rem);
     padding-bottom: clamp(5rem, 3.5rem + 4vw, 6.5rem);
     text-align: center;
-    background-image: url('../public/fotos-fenix/hero-bg.webp');
+    background-image: url('../public/fotos-fenix/piscina/pousada-fenix-litoral-pr-piscina-ao-ar-livre-1.webp');
     background-size: cover;
     background-position: center;
     /* O scrim do texto e o blur dele passam da borda: contem o transbordo */
@@ -1957,4 +1957,60 @@ body {
         max-width: 190px;
         text-align: right;
     }
+}
+
+/* Booking Callout Card */
+.booking-callout {
+    margin-top: 3.5rem;
+    padding: 2.5rem 2rem;
+    background-color: var(--bg-card);
+    border: 1px dashed var(--border-color);
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.booking-callout:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.booking-callout h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.booking-callout p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.booking-callout .btn-booking {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #003580; /* Booking.com Official Blue */
+    color: #ffffff !important;
+    font-weight: 600;
+    padding: 0.85rem 2rem;
+    border-radius: 50px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 53, 128, 0.2);
+    text-decoration: none;
+}
+
+.booking-callout .btn-booking:hover {
+    background-color: #00224f;
+    transform: scale(1.03);
+    color: #ffffff !important;
 }
