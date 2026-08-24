@@ -56,6 +56,12 @@ const REVIEWS = [
     author: 'Jaqueline Mariano',
     source: 'Google Avaliações',
   },
+  {
+    stars: 5,
+    text: `"Excepcional! A pousada fica bem pertinho da praia, os quartos têm ar-condicionado excelente e camas confortáveis. A piscina no pátio é deliciosa e os funcionários nos atenderam com muito carinho. O café da manhã é sensacional!"`,
+    author: 'Renato F. S.',
+    source: 'Booking.com',
+  },
 ];
 
 const FAQS = [
@@ -494,7 +500,15 @@ export default function App() {
           </div>
 
           <div className="booking-callout">
+            <div className="booking-badge">
+              <span className="booking-logo">Booking.com</span>
+              <span className="booking-score">7.9</span>
+              <span className="booking-rating-text">Muito Bom (89 avaliações)</span>
+            </div>
             <h3>Quer ver todas as nossas 25 acomodações?</h3>
+            <p className="booking-review-quote">
+              "Excelente custo-benefício, pertinho da praia, piscina limpa e equipe super atenciosa!" — Avaliação real no Booking.com
+            </p>
             <p>
               Oferecemos tarifas sob medida para casais, famílias e grandes grupos. Consulte todas as nossas opções de quartos, datas e realize sua reserva com segurança diretamente pelo Booking.com.
             </p>

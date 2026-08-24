@@ -2014,3 +2014,50 @@ body {
     transform: scale(1.03);
     color: #ffffff !important;
 }
+
+/* Booking badge & review quote */
+.booking-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: #f5f7fa;
+    border: 1px solid #d3d7de;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.booking-logo {
+    font-weight: 800;
+    color: #003580;
+    font-size: 1.1rem;
+}
+
+.booking-score {
+    background-color: #003580;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    line-height: 1;
+}
+
+.booking-rating-text {
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+}
+
+.booking-review-quote {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--accent-primary) !important;
+    background-color: rgba(220, 169, 109, 0.08);
+    border-left: 3px solid var(--accent-primary);
+    padding: 0.75rem 1.25rem;
+    border-radius: 4px;
+    margin: 0.5rem 0 !important;
+    max-width: 580px;
+    line-height: 1.5;
+}
