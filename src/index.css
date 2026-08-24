@@ -1223,7 +1223,7 @@ footer {
 
 @media (min-width: 768px) {
     .footer-grid {
-        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-columns: 2fr 1fr 1.2fr 1.2fr;
     }
 }
 
@@ -2060,4 +2060,62 @@ body {
     margin: 0.5rem 0 !important;
     max-width: 580px;
     line-height: 1.5;
+}
+
+/* Cadastur Certificate badge & column */
+.footer-certifications {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.cadastur-badge {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #0072c6 0%, #00508c 100%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    color: #ffffff;
+    gap: 0.15rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    max-width: 260px;
+}
+
+.cadastur-title {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #ffd700;
+}
+
+.cadastur-subtitle {
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.cadastur-number {
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.cadastur-status {
+    font-size: 0.7rem;
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.2);
+    align-self: flex-start;
+    padding: 0.15rem 0.4rem;
+    border-radius: 3px;
+    margin-top: 0.25rem;
+    color: #ffd700;
+}
+
+.cadastur-desc {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.4;
+    margin: 0;
+    max-width: 260px;
 }

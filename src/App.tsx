@@ -797,6 +797,18 @@ export default function App() {
             <p><i className="fa-solid fa-envelope" aria-hidden="true"></i> fenixpousadaerestaurante@gmail.com</p>
             <p><i className="fa-solid fa-location-dot" aria-hidden="true"></i> R. Dário Veloso, 287 - Praia de Leste, Pontal do Paraná/PR</p>
           </div>
+          <div className="footer-certifications">
+            <h4>Certificação Oficial</h4>
+            <div className="cadastur-badge">
+              <span className="cadastur-title">CADASTUR</span>
+              <span className="cadastur-subtitle">Turismo Legal</span>
+              <span className="cadastur-number">33.681.427/0001-51</span>
+              <span className="cadastur-status">Meio de Hospedagem</span>
+            </div>
+            <p className="cadastur-desc">
+              Cadastro regularizado sob CNPJ 33.681.427/0001-51. Validade: 2026 a 2028.
+            </p>
+          </div>
         </div>
         <div className="container footer-bottom text-center">
           <p>&copy; 2026 Pousada Restaurante Fênix. Todos os direitos reservados. Praia de Leste, PR.</p>
