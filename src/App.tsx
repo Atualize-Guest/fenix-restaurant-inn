@@ -17,10 +17,7 @@ export type GalleryCategory = (typeof GALLERY_CATEGORIES)[number]['key'];
 /* Constantes (fora do componente: não recriam a cada render)          */
 /* ------------------------------------------------------------------ */
 
-const RATES = {
-  comCafe: { ar: 'R$ 230', ventilador: 'R$ 180', hidro: 'R$ 350', tripla: 'R$ 288', familia: 'R$ 625', economica: 'R$ 425' },
-  semCafe: { ar: 'R$ 180', ventilador: 'R$ 130', hidro: 'R$ 300', tripla: 'R$ 238', familia: 'R$ 525', economica: 'R$ 350' },
-};
+
 
 const SECTIONS = ['home', 'sobre', 'suites', 'galeria', 'depoimentos', 'faq', 'contato'];
 
@@ -115,10 +112,8 @@ interface LightboxFoto {
 /* ------------------------------------------------------------------ */
 
 export default function App() {
-  // 1. Tarifas (com / sem café da manhã)
-  const [withBreakfast, setWithBreakfast] = useState(true);
-  const cafeLabel = withBreakfast ? 'com café da manhã' : 'sem café da manhã';
-  const tarifas = withBreakfast ? RATES.comCafe : RATES.semCafe;
+  // 1. Tarifas - Removido exibição de preços do site
+  const withBreakfast = false;
 
   // 2. Galeria
   const [currentCategory, setCurrentCategory] = useState<GalleryCategory>('quartos');
@@ -401,23 +396,8 @@ export default function App() {
           <span className="section-badge">Nossas Suítes</span>
           <h2 className="section-title">Acomodações sob medida para você</h2>
           <p className="section-subtitle">
-            Arraste as fotos para conhecer cada suíte por dentro e escolha a tarifa com ou sem café
-            da manhã.
+            Arraste as fotos para conhecer cada suíte por dentro e clique para consultar a disponibilidade.
           </p>
-
-          <div className="toggle-container">
-            <span className={`toggle-label sem-cafe ${!withBreakfast ? 'active' : ''}`}>Sem Café da Manhã</span>
-            <label className="switch">
-              <input
-                type="checkbox"
-                checked={withBreakfast}
-                onChange={(e) => setWithBreakfast(e.target.checked)}
-                aria-label="Incluir café da manhã nas tarifas"
-              />
-              <span className="slider round"></span>
-            </label>
-            <span className={`toggle-label com-cafe ${withBreakfast ? 'active' : ''}`}>Com Café da Manhã</span>
-          </div>
 
           <div className="suites-grid">
             {SUITES.map((suite, indiceSuite) => (
@@ -447,41 +427,9 @@ export default function App() {
                       </li>
                     ))}
                   </ul>
-                  <div className="suite-pricing">
-                    {suite.tarifa ? (
-                      <>
-                        <span className="price-prefix">A partir de</span>
-                        <span className="price">{tarifas[suite.tarifa]}</span>
-                        <span className="price-suffix">/ diária</span>
-                      </>
-                    ) : (
-                      <>
-                        <span className="price-prefix">Consulte tarifas</span>
-                        <span className="price price-sm">Sob Consulta</span>
-                      </>
-                    )}
-                  </div>
 
-                  {suite.tabelaPrecos && (
-                    <div className="suite-price-table">
-                      <div className="price-table-header">
-                        <span>Hóspedes</span>
-                        <span>Diária {withBreakfast ? '(c/ Café)' : '(s/ Café)'}</span>
-                      </div>
-                      {suite.tabelaPrecos.map((row) => (
-                        <div className="price-table-row" key={row.hospedes}>
-                          <span>
-                            <i className="fa-solid fa-user" aria-hidden="true"></i> × {row.hospedes}
-                          </span>
-                          <span className="price-table-value">
-                            {withBreakfast ? row.comCafe : row.semCafe}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  )}
                   <a
-                    href={waLink(suite.mensagem.replace('%CAFE%', cafeLabel))}
+                    href={waLink(suite.mensagem.replace(' (%CAFE%)', '').replace('(%CAFE%)', '').replace('%CAFE%', ''))}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-outline-primary btn-block"
