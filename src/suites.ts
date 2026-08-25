@@ -32,7 +32,7 @@ export const SUITES: Suite[] = [
     nome: 'Suíte com Ar Condicionado',
     badge: 'Standard',
     descricao:
-      'Suíte aconchegante localizada no térreo. Oferece cama de casal, ar-condicionado, frigobar, TV de tela plana e banheiro privativo com chuveiro.',
+      'Suíte no térreo com cama de casal, frigobar e TV.',
     comodidades: [
       { icone: 'fa-compress', texto: 'Térreo' },
       { icone: 'fa-bed', texto: '1 cama de casal' },
@@ -45,10 +45,9 @@ export const SUITES: Suite[] = [
     ctaLabel: 'Consultar Disponibilidade',
     mensagem: 'Olá! Vim pelo site e quero reservar a Suíte com Ar Condicionado (%CAFE%).',
     fotos: [
-      { arquivo: Q + 'pousada-fenix-praia-de-leste-quarto-casal-ar-condicionado-tv.webp', alt: 'Suíte com ar-condicionado da Pousada Fênix' },
-      { arquivo: Q + 'pousada-fenix-pontal-do-parana-quarto-duplo-casal-standard.webp', alt: 'Cama de casal com ar-condicionado' },
-      { arquivo: Q + 'pousada-fenix-praia-de-leste-quarto-casal-conforto-laranja.webp', alt: 'Opção de quarto com cama decorada' },
-      { arquivo: Q + 'pousada-fenix-praia-de-leste-quarto-casal-enxoval-azul.webp', alt: 'Quarto com enxoval azul aconchegante' },
+      { arquivo: Q + 'pousada-fenix-suite-ar-condicionado-cama-1.png', alt: 'Suíte com Ar Condicionado - Cama de casal, TV e ar' },
+      { arquivo: Q + 'pousada-fenix-suite-ar-condicionado-cama-2.png', alt: 'Suíte com Ar Condicionado - Cama vista de outro ângulo' },
+      { arquivo: Q + 'pousada-fenix-suite-ar-condicionado-banheiro-1.png', alt: 'Suíte com Ar Condicionado - Banheiro privativo' },
     ],
     tabelaPrecos: [
       { hospedes: 2, semCafe: 'R$ 180', comCafe: 'R$ 230' },
