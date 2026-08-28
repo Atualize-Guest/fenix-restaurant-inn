@@ -341,8 +341,6 @@ img {
     background-image: url('/fotos-fenix/pousada-fenix-praia-de-leste-vista-aerea.jpg');
     background-size: cover;
     background-position: center;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
     /* O scrim do texto e o blur dele passam da borda: contem o transbordo */
     overflow: hidden;
 }

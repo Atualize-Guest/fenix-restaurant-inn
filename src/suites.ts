@@ -32,7 +32,7 @@ export const SUITES: Suite[] = [
     nome: 'Suíte com Ar Condicionado',
     badge: 'Standard',
     descricao:
-      'Suíte no térreo com cama de casal, frigobar e TV.',
+      'Suíte no térreo com cama de casal, frigobar e TV. (No Booking.com: Suíte / Suíte de 01 quarto - Quartos 11 e 17).',
     comodidades: [
       { icone: 'fa-compress', texto: 'Térreo' },
       { icone: 'fa-bed', texto: '1 cama de casal' },
@@ -58,7 +58,7 @@ export const SUITES: Suite[] = [
     nome: 'Suíte com Ventilador',
     badge: 'Econômica',
     descricao:
-      'Nossa opção mais em conta para casais no térreo. Equipado com cama de casal, ventilador, TV de tela plana, frigobar e banheiro privativo.',
+      'Nossa opção mais em conta para casais no térreo. Equipado com cama de casal, ventilador, TV de tela plana, frigobar e banheiro privativo. (Esta suíte está disponível exclusivamente para reservas diretas e não se encontra no Booking.com).',
     comodidades: [
       { icone: 'fa-compress', texto: 'Térreo' },
       { icone: 'fa-bed', texto: '1 cama de casal' },
@@ -71,8 +71,6 @@ export const SUITES: Suite[] = [
     ctaLabel: 'Consultar Disponibilidade',
     mensagem: 'Olá! Vim pelo site e quero reservar a Suíte com Ventilador (%CAFE%).',
     fotos: [
-      { arquivo: Q + 'pousada-fenix-pontal-do-parana-quartos-com-ar-condicionado-4.webp', alt: 'Quarto com ventilador and frigobar' },
-      { arquivo: Q + 'pousada-fenix-pontal-do-parana-quartos-com-ar-condicionado-5.webp', alt: 'Vista interna com mesa e cama' },
       { arquivo: Q + 'pousada-fenix-suite-casal-30.webp', alt: 'Quarto aconchegante e compacto no térreo' },
     ],
     tabelaPrecos: [
@@ -84,7 +82,7 @@ export const SUITES: Suite[] = [
     nome: 'Suíte com Hidromassagem',
     badge: 'Premium',
     descricao:
-      'Perfeita para casais no térreo. Oferece privacidade total, cama queen, banheira de hidromassagem privativa, ar-condicionado, TV smart e frigobar.',
+      'Perfeita para casais no térreo. Oferece privacidade total, cama queen, banheira de hidromassagem privativa, ar-condicionado, TV smart e frigobar. (No Booking.com: Suíte Queen com banheira de hidromassagem - Quarto 08).',
     comodidades: [
       { icone: 'fa-compress', texto: 'Térreo' },
       { icone: 'fa-bed', texto: '1 cama queen confortável' },
@@ -113,7 +111,7 @@ export const SUITES: Suite[] = [
     nome: 'Suíte Tripla',
     badge: 'Recomendado',
     descricao:
-      'Suíte no térreo equipada com cama de casal ou queen, mais uma cama de solteiro, frigobar, TV e ar-condicionado.',
+      'Suíte no térreo equipada com cama de casal ou queen, mais uma cama de solteiro, frigobar, TV e ar-condicionado. (No Booking.com: Suíte família deluxe / Quarto triplo com banheiro privativo - Quartos 05, 07 e 10).',
     comodidades: [
       { icone: 'fa-compress', texto: 'Térreo' },
       { icone: 'fa-bed', texto: '1 casal/queen + 1 solteiro' },
@@ -142,7 +140,7 @@ export const SUITES: Suite[] = [
     nome: 'Suíte Família',
     badge: 'Família',
     descricao:
-      'Suíte no 1º andar com opções de cama de casal, solteiro e beliche, TV e frigobar. Acomoda até 06 pessoas.',
+      'Suíte no 1º andar com opções de cama de casal, solteiro e beliche, TV e frigobar. Acomoda até 06 pessoas. (No Booking.com: Quarto Família, Quarto Quádruplo Confort, Standard ou Clássico, Quarto Duplo - Quartos 21 a 28).',
     comodidades: [
       { icone: 'fa-compress', texto: '1º Andar' },
       { icone: 'fa-bed', texto: 'Casal, solteiro e beliche' },
@@ -172,7 +170,7 @@ export const SUITES: Suite[] = [
     nome: 'Suíte Econômica',
     badge: 'Excursões',
     descricao:
-      'Localizada no térreo com ar-condicionado, geladeira e TV. Opções com camas de casal e beliches, ideal para excursões e grandes grupos. Acomoda até 08 pessoas.',
+      'Localizada no térreo com ar-condicionado, geladeira e TV. Opções com camas de casal e beliches, ideal para excursões e grandes grupos. Acomoda até 08 pessoas. (No Booking.com: Quarto família / Quarto família standard - Quartos 02 e 03).',
     comodidades: [
       { icone: 'fa-compress', texto: 'Térreo' },
       { icone: 'fa-bed', texto: 'Opções com camas casal e beliches' },
@@ -185,11 +183,11 @@ export const SUITES: Suite[] = [
     ctaLabel: 'Consultar Disponibilidade',
     mensagem: 'Olá! Vim pelo site e quero reservar a Suíte Econômica (%CAFE%).',
     fotos: [
-      { arquivo: Q + 'pousada-fenix-quarto-familia-standard-cama-1.png', alt: 'Suíte Econômica - Cama de solteiro, ventilador e frigobar' },
-      { arquivo: Q + 'pousada-fenix-quarto-familia-standard-cama-2.png', alt: 'Suíte Econômica - Beliche de madeira, solteiro e TV' },
-      { arquivo: Q + 'pousada-fenix-quarto-familia-standard-cama-3.png', alt: 'Suíte Econômica - Cama de casal e solteiro com ar-condicionado' },
-      { arquivo: Q + 'pousada-fenix-quarto-familia-standard-cama-4.png', alt: 'Suíte Econômica - Visão geral com sofás e beliche' },
-      { arquivo: Q + 'pousada-fenix-quarto-familia-standard-banheiro-1.png', alt: 'Suíte Econômica - Banheiro com box e pia' },
+      { arquivo: Q + 'suite-economica-nova-1.png', alt: 'Visão geral do quarto com camas e beliche' },
+      { arquivo: Q + 'suite-economica-nova-2.png', alt: 'Cama, TV e ventilador' },
+      { arquivo: Q + 'suite-economica-nova-3.png', alt: 'Camas e estante' },
+      { arquivo: Q + 'suite-economica-nova-4.png', alt: 'Vista da área da piscina pela janela' },
+      { arquivo: Q + 'suite-economica-nova-5.png', alt: 'Banheiro privativo da Suíte Econômica' },
     ],
     tabelaPrecos: [
       { hospedes: 3, semCafe: 'R$ 350', comCafe: 'R$ 425' },
