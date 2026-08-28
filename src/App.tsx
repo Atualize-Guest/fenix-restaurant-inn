@@ -197,6 +197,27 @@ export default function App() {
     captureTracking();
   }, []);
 
+  // 9. Intersection Observer for scroll animations
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+
   const totalFotos = Object.values(IMAGES).reduce((soma, lista) => soma + lista.length, 0);
 
   return (
@@ -322,7 +343,7 @@ export default function App() {
       {/* Sobre */}
       <section id="sobre" className="section sobre">
         <div className="container grid grid-2">
-          <div className="sobre-img-wrapper">
+          <div className="sobre-img-wrapper animate-on-scroll">
             <div className="image-box">
               <img
                 src="fotos-fenix/piscina/pousada-fenix-litoral-pr-piscina-ao-ar-livre-1.webp"
@@ -339,37 +360,37 @@ export default function App() {
               </div>
             </div>
           </div>
-          <div className="sobre-info">
-            <span className="section-badge">Sobre Nós</span>
-            <h2 className="section-title">O equilíbrio perfeito para suas férias no litoral</h2>
+          <div className="sobre-info animate-on-scroll">
+            <span className="section-badge animate-on-scroll">Sobre Nós</span>
+            <h2 className="section-title animate-on-scroll">O equilíbrio perfeito para suas férias no litoral</h2>
             <p className="section-text">
               Na Pousada Fênix, oferecemos uma experiência acolhedora que fará você se sentir em
               casa. Com uma administração familiar dedicada e atenciosa, nosso foco é garantir o seu
               descanso total a poucos passos da praia.
             </p>
             <div className="features-list">
-              <div className="feature-item">
+              <div className="feature-item animate-on-scroll">
                 <i className="fa-solid fa-umbrella-beach" aria-hidden="true"></i>
                 <div>
                   <h3>Pertinho do Mar</h3>
                   <p>Estamos a apenas 300 metros da praia, uma curta caminhada de 4 minutos.</p>
                 </div>
               </div>
-              <div className="feature-item">
+              <div className="feature-item animate-on-scroll">
                 <i className="fa-solid fa-utensils" aria-hidden="true"></i>
                 <div>
                   <h3>Restaurante Integrado</h3>
                   <p>Delicie-se com a nossa churrascaria e parrilla integrada, servindo pratos excelentes.</p>
                 </div>
               </div>
-              <div className="feature-item">
+              <div className="feature-item animate-on-scroll">
                 <i className="fa-solid fa-swimming-pool" aria-hidden="true"></i>
                 <div>
                   <h3>Piscina &amp; Lazer</h3>
                   <p>Piscina externa sempre limpa e área com mesas para socializar e relaxar.</p>
                 </div>
               </div>
-              <div className="feature-item">
+              <div className="feature-item animate-on-scroll">
                 <i className="fa-solid fa-users" aria-hidden="true"></i>
                 <div>
                   <h3>Ideal para Excursões &amp; Grupos</h3>
@@ -393,15 +414,15 @@ export default function App() {
       {/* Suítes */}
       <section id="suites" className="section suites">
         <div className="container text-center">
-          <span className="section-badge">Nossas Suítes</span>
-          <h2 className="section-title">Acomodações sob medida para você</h2>
-          <p className="section-subtitle">
+          <span className="section-badge animate-on-scroll">Nossas Suítes</span>
+          <h2 className="section-title animate-on-scroll">Acomodações sob medida para você</h2>
+          <p className="section-subtitle animate-on-scroll">
             Arraste as fotos para conhecer cada suíte por dentro e clique para consultar a disponibilidade.
           </p>
 
           <div className="suites-grid">
             {SUITES.map((suite, indiceSuite) => (
-              <article className="suite-card" key={suite.id}>
+              <article className="suite-card animate-on-scroll" key={suite.id}>
                 <div className="suite-img-container">
                   <Carousel
                     fotos={suite.fotos}
@@ -447,7 +468,7 @@ export default function App() {
             ))}
           </div>
 
-          <div className="booking-callout">
+          <div className="booking-callout animate-on-scroll">
             <div className="booking-badge">
               <span className="booking-logo">Booking.com</span>
               <span className="booking-score">7.9</span>
@@ -476,9 +497,9 @@ export default function App() {
       <section id="galeria" className="section galeria">
         <div className="container">
           <div className="text-center">
-            <span className="section-badge">Galeria de Fotos</span>
-            <h2 className="section-title">Explore as fotos da nossa pousada</h2>
-            <p className="section-subtitle">
+            <span className="section-badge animate-on-scroll">Galeria de Fotos</span>
+            <h2 className="section-title animate-on-scroll">Explore as fotos da nossa pousada</h2>
+            <p className="section-subtitle animate-on-scroll">
               São {totalFotos} fotos reais das nossas instalações. Escolha uma categoria e clique em
               qualquer imagem para ampliar.
             </p>
@@ -508,7 +529,7 @@ export default function App() {
               return (
                 <button
                   type="button"
-                  className="gallery-item"
+                  className="gallery-item animate-on-scroll"
                   key={imgName}
                   onClick={() => abrirGaleriaNoLightbox(i)}
                   aria-label={`Ampliar foto: ${caption}`}
@@ -546,10 +567,10 @@ export default function App() {
       {/* Depoimentos */}
       <section id="depoimentos" className="section depoimentos">
         <div className="container text-center">
-          <span className="section-badge">Depoimentos</span>
-          <h2 className="section-title">O que dizem os nossos hóspedes</h2>
+          <span className="section-badge animate-on-scroll">Depoimentos</span>
+          <h2 className="section-title animate-on-scroll">O que dizem os nossos hóspedes</h2>
 
-          <div className="reviews-slider">
+          <div className="reviews-slider animate-on-scroll">
             {REVIEWS.map((rev, i) => (
               <div className={`review-card ${i === currentReviewIdx ? 'active' : ''}`} key={rev.author}>
                 <div className="review-stars" aria-label={`${rev.stars} de 5 estrelas`}>
@@ -582,15 +603,15 @@ export default function App() {
       <section id="faq" className="section faq">
         <div className="container">
           <div className="text-center">
-            <span className="section-badge">FAQ</span>
-            <h2 className="section-title">Dúvidas Frequentes</h2>
-            <p className="section-subtitle">
+            <span className="section-badge animate-on-scroll">FAQ</span>
+            <h2 className="section-title animate-on-scroll">Dúvidas Frequentes</h2>
+            <p className="section-subtitle animate-on-scroll">
               Encontre respostas rápidas para as principais perguntas sobre a sua estadia na Pousada
               Fênix.
             </p>
           </div>
 
-          <div className="faq-accordion">
+          <div className="faq-accordion animate-on-scroll">
             {FAQS.map((faq, i) => (
               <div className={`faq-item ${activeFaqIdx === i ? 'active' : ''}`} key={faq.question}>
                 <h3>
@@ -612,7 +633,7 @@ export default function App() {
             ))}
           </div>
 
-          <div className="faq-cta text-center">
+          <div className="faq-cta text-center animate-on-scroll">
             <p>Ficou com alguma dúvida que não está aqui?</p>
             <a
               href={waLink('Olá! Vim pelo site da Pousada Fênix e tenho uma dúvida sobre a hospedagem.')}
@@ -630,9 +651,9 @@ export default function App() {
       {/* Contato */}
       <section id="contato" className="section contato">
         <div className="container grid grid-2">
-          <div className="contato-info">
-            <span className="section-badge">Fale Conosco</span>
-            <h2 className="section-title">Estamos prontos para receber você</h2>
+          <div className="contato-info animate-on-scroll">
+            <span className="section-badge animate-on-scroll">Fale Conosco</span>
+            <h2 className="section-title animate-on-scroll">Estamos prontos para receber você</h2>
             <p className="section-text">
               Deseja fazer uma reserva direta ou tirar alguma dúvida? Entre em contato pelos canais
               abaixo ou envie uma mensagem no WhatsApp.
@@ -704,7 +725,7 @@ export default function App() {
             </div>
           </div>
 
-          <div className="contato-mapa">
+          <div className="contato-mapa animate-on-scroll">
             <iframe
               src="https://www.google.com/maps?q=R.+D%C3%A1rio+Veloso,+287+-+Praia+de+Leste,+Pontal+do+Paran%C3%A1+-+PR,+83255-000&output=embed"
               style={{ border: 0, width: '100%', height: '100%', minHeight: '380px', borderRadius: '18px' }}
