@@ -1,20 +1,20 @@
 /* CSS Design System - Pousada Fênix (Premium Custom Theme) */
 
 :root {
-    --bg-primary: #f5efe2; /* Soft warm sandy beige - NO PURE WHITE */
-    --bg-secondary: #faf6ec; /* Cozy cream - NO PURE WHITE (replaces #ffffff) */
-    --bg-tertiary: #eadecc; /* Warm toasted sand - NO PURE WHITE */
-    --accent-primary: #f37021; /* Official Phoenix Orange */
-    --accent-secondary: #ff9b26; /* Bright Flame Orange */
-    --accent-gold: #f59e0b; /* Golden Flame */
-    --accent-hover: #d95c14; /* Deep rust orange */
-    --text-main: #22252a; /* Deep Charcoal from logo text */
-    --text-muted: #5b626e; /* Muted Slate Gray */
-    --border-color: rgba(243, 112, 33, 0.15); /* Warm orange borders */
-    --glass-bg: rgba(250, 246, 236, 0.85); /* Semi-transparent warm cream navbar */
-    --glass-border: rgba(243, 112, 33, 0.1);
-    --shadow-main: 0 15px 35px -10px rgba(139, 90, 43, 0.08); /* Warm earthy shadow */
-    --shadow-hover: 0 25px 50px -15px rgba(139, 90, 43, 0.14);
+    --bg-primary: #ffffff; /* Clean bright white for a fresh feel */
+    --bg-secondary: #f0fdf4; /* Very light mint/tropical breeze for contrast */
+    --bg-tertiary: #dcfce7; /* Soft tropical green/blue for highlights */
+    --accent-primary: #f37021; /* Official Phoenix Orange for CTA buttons */
+    --accent-secondary: #0ea5e9; /* Vibrant ocean blue for icons and badges */
+    --accent-gold: #ffaa00; /* Sunny yellow-orange */
+    --accent-hover: #d95c14; 
+    --text-main: #0f172a; /* Deep crisp slate */
+    --text-muted: #475569; /* Clear slate gray */
+    --border-color: #e2e8f0; /* Clean neutral borders */
+    --glass-bg: rgba(255, 255, 255, 0.92); 
+    --glass-border: rgba(14, 165, 233, 0.15);
+    --shadow-main: 0 12px 30px -10px rgba(14, 165, 233, 0.12); /* Light fresh shadow */
+    --shadow-hover: 0 20px 40px -15px rgba(14, 165, 233, 0.22);
     --font-main: 'Outfit', sans-serif;
     --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); /* Ultra smooth ease-out */
 
