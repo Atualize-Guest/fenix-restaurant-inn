@@ -5,7 +5,7 @@
 export const SITE_URL = 'https://pousadafenixpontalpr.com.br';
 
 /** URL oficial de reservas no Booking.com */
-export const BOOKING_URL = 'https://www.booking.com/hotel/br/pousada-fenix-pontal-do-parana.html';
+export const BOOKING_URL = 'https://www.booking.com/hotel/br/pousada-restaurante-fenix.pt-br.html';
 
 /** Número do WhatsApp sem máscara (formato do wa.me). */
 export const WHATSAPP_NUMBER = '5541989047277';
