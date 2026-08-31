@@ -156,11 +156,9 @@ export const SUITES: Suite[] = [
     ctaLabel: 'Consultar Disponibilidade',
     mensagem: 'Olá! Vim pelo site e quero reservar a Suíte Família (%CAFE%).',
     fotos: [
-      { arquivo: Q + 'pousada-fenix-suite-familia-cama-1.png', alt: 'Suíte Família - Cama de casal, solteiro e frigobar' },
-      { arquivo: Q + 'pousada-fenix-suite-familia-cama-2.png', alt: 'Suíte Família - Smart TV, ar-condicionado e estante de madeira' },
-      { arquivo: Q + 'pousada-fenix-suite-familia-cama-3.png', alt: 'Suíte Família - Vista geral do quarto' },
-      { arquivo: Q + 'pousada-fenix-suite-familia-cama-4.png', alt: 'Suíte Família - Quarto de solteiro e estante' },
-      { arquivo: Q + 'pousada-fenix-suite-familia-banheiro-1.png', alt: 'Suíte Família - Banheiro privativo' },
+      { arquivo: Q + 'suite-familia-nova-1.png', alt: 'Suíte Família - Visão geral com cama de solteiro, beliche, cortina lilás e TV na parede' },
+      { arquivo: Q + 'suite-familia-nova-2.jpg', alt: 'Suíte Família - Porta de entrada (Quarto 14), janela com cortina lilás, frigobar e ventilador' },
+      { arquivo: Q + 'suite-familia-nova-3.jpg', alt: 'Suíte Família - Vista do quarto conjugado com beliche, cama e nicho para roupas com cobertores' },
     ],
     tabelaPrecos: [
       { hospedes: 4, semCafe: 'R$ 525', comCafe: 'R$ 625' },
