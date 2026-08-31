@@ -71,7 +71,10 @@ export const SUITES: Suite[] = [
     ctaLabel: 'Consultar Disponibilidade',
     mensagem: 'Olá! Vim pelo site e quero reservar a Suíte com Ventilador (%CAFE%).',
     fotos: [
-      { arquivo: Q + 'pousada-fenix-suite-casal-30.webp', alt: 'Quarto aconchegante e compacto no térreo' },
+      { arquivo: Q + 'suite-ventilador-nova-1.jpg', alt: 'Suíte com Ventilador - Cama de casal, TV, frigobar e ventilador' },
+      { arquivo: Q + 'suite-ventilador-nova-2.jpg', alt: 'Suíte com Ventilador - Banheiro privativo com box de vidro e chuveiro' },
+      { arquivo: Q + 'suite-ventilador-nova-3.jpg', alt: 'Suíte com Ventilador - Vista do quarto e acesso ao banheiro' },
+      { arquivo: Q + 'suite-ventilador-nova-4.jpg', alt: 'Suíte com Ventilador - Vista da porta de entrada, frigobar e estante' },
     ],
     tabelaPrecos: [
       { hospedes: 2, semCafe: 'R$ 130', comCafe: 'R$ 180' },
