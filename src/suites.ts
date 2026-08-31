@@ -184,11 +184,9 @@ export const SUITES: Suite[] = [
     ctaLabel: 'Consultar Disponibilidade',
     mensagem: 'Olá! Vim pelo site e quero reservar a Suíte Econômica (%CAFE%).',
     fotos: [
-      { arquivo: Q + 'suite-economica-nova-1.png', alt: 'Visão geral do quarto com camas e beliche' },
-      { arquivo: Q + 'suite-economica-nova-2.png', alt: 'Cama, TV e ventilador' },
-      { arquivo: Q + 'suite-economica-nova-3.png', alt: 'Camas e estante' },
-      { arquivo: Q + 'suite-economica-nova-4.png', alt: 'Vista da área da piscina pela janela' },
-      { arquivo: Q + 'suite-economica-nova-5.png', alt: 'Banheiro privativo da Suíte Econômica' },
+      { arquivo: Q + 'suite-economica-nova-v2-1.jpg', alt: 'Suíte Econômica - Cama de solteiro, frigobar, TV na parede e janela ampla' },
+      { arquivo: Q + 'suite-economica-nova-v2-2.jpg', alt: 'Suíte Econômica - Visão ampla com beliche de madeira, cama de solteiro, TV, frigobar e ventilador' },
+      { arquivo: Q + 'suite-economica-nova-v2-3.jpg', alt: 'Suíte Econômica - Quarto com cama de casal, cama de solteiro, ar-condicionado e toalhas dobradas' },
     ],
     tabelaPrecos: [
       { hospedes: 3, semCafe: 'R$ 350', comCafe: 'R$ 425' },
