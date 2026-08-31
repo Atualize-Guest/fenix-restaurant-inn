@@ -2,8 +2,8 @@
 
 :root {
     --bg-primary: #ffffff; /* Clean bright white for a fresh feel */
-    --bg-secondary: #f0fdf4; /* Very light mint/tropical breeze for contrast */
-    --bg-tertiary: #dcfce7; /* Soft tropical green/blue for highlights */
+    --bg-secondary: #f0f9ff; /* Soft sky/ocean blue for fresh beach contrast */
+    --bg-tertiary: #e0f2fe; /* Soft ocean breeze highlight */
     --accent-primary: #f37021; /* Official Phoenix Orange for CTA buttons */
     --accent-secondary: #0ea5e9; /* Vibrant ocean blue for icons and badges */
     --accent-gold: #ffaa00; /* Sunny yellow-orange */
